@@ -1,26 +1,39 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #000000;
+  --foreground: #ffffff;
+
+  --theme-blue: #2E37FE;
+  --theme-purple: #9196FF;
+  --theme-green: #7FFF40;
+  --theme-gray: #C1C1C1;
+  --theme-footer-gray: #929292;
 }
 
-@theme inline {
+@theme {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --color-theme-blue: var(--theme-blue);
+  --color-theme-green: var(--theme-green);
+  --color-theme-purple: var(--var-purple);
+  --color-theme-gray: var(--theme-gray);
+  --color-theme-footer-gray: var(--theme-footer-gray);
+  
+  --font-inter: var(--font-inter-variable);
+  --font-istok-web: var(--font-istok-web-variable);
+  --font-cormorant-upright: var(--font-cormorant-upright-variable);
+  --font-cormorant-garamond: var(--font-cormorant-garamond-variable);
+  --font-rancho: var(--font-rancho-variable);
+  --font-poppins: var(--font-poppins-variable);
+  --font-space-grotesk: var(--font-space-grotesk-variable);
+  --font-hanken-grotesk: var(--font-hanken-grotesk-variable);
+  --font-geist-mono: var(--font-geist-mono-variable);
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-space-grotesk);
 }
