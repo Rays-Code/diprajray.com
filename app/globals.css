@@ -37,3 +37,56 @@ body {
   color: var(--foreground);
   font-family: var(--font-space-grotesk);
 }
+
+@keyframes drawUnderline {
+  from {
+    stroke-dashoffset: 200;
+  }
+
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+.animate-underline {
+  stroke-dasharray: 200;
+  stroke-dashoffset: 200;
+  animation: drawUnderline 0.8s ease-out 0.5s forwards;
+}
+
+@keyframes pop {
+  0% {
+    opacity: 0;
+    transform: scale(0);
+  }
+
+  70% {
+    opacity: 1;
+    transform: scale(1.1);
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.animate-pop {
+  animation: pop 0.4s ease-out 1.3s forwards;
+}
+
+@keyframes drawTestimonialUnderline {
+  from {
+    stroke-dashoffset: 200;
+  }
+
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+.animate-underline {
+  stroke-dasharray: 200;
+  stroke-dashoffset: 200;
+  animation: drawTestimonialUnderline 0.8s ease-out 0.5s forwards;
+}
