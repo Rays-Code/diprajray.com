@@ -1,9 +1,8 @@
 import Link from "next/link";
 import Image from "next/image";
 import CTA from "../_ui/CTA";
+import navData from "../_data/nav";
 import { motion } from "motion/react";
-
-const navItems = ["Home", "Work", "Resume", "Contact"];
 
 const Navbar = () => {
     return (
@@ -14,17 +13,17 @@ const Navbar = () => {
                 <div className="flex justify-center items-center">
                     {/* Logo */}
                     <div>
-                        <Image src="/diprajray.com-logo.png" unoptimized width={60} height={60} alt="diprajray.com's logo" />
+                        <Image src={navData.logo.src} unoptimized width={60} height={60} alt={navData.logo.name}/>
                     </div>
                     {/* Avatar */}
                     <div className="-ml-7 border-3 border-theme-blue rounded-full">
-                        <Image src="/diprajray-avatar.png" unoptimized width={25} height={25} alt="diprajray's avatar" className="rounded-full" />
+                        <Image src={navData.avatar.src} unoptimized width={25} height={25} alt={navData.avatar.name} className="rounded-full" />
                     </div>
                 </div>
 
                 {/* Nav items */}
                 <div className="flex gap-6">
-                    {navItems.map((item) => (
+                    {navData.navItems.map((item) => (
                         <motion.div
                             key={item}
                             className="relative"
@@ -57,7 +56,7 @@ const Navbar = () => {
 
                 {/* CTA button */}
                 <div>
-                    <CTA label="Let's Talk" action="#" />
+                    <CTA label={navData.cta.label} action={navData.cta.action} />
                 </div>
 
             </div>

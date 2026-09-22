@@ -8,6 +8,7 @@ import ProjectButton from "../_ui/ProjectButton"
 import Navbar from "./Navbar"
 import Stats from "./Stats"
 import Testimonials from "./Testimonials";
+import heroData from "../_data/hero";
 
 
 const Hero = () => {
@@ -17,22 +18,22 @@ const Hero = () => {
       <Navbar />
 
       <motion.div initial={{ opacity: 0, y:50 }} animate={{ opacity:1, y:0 }} transition={{ duration: 0.8, ease: "easeOut" }} className="relative flex flex-col justify-center items-center pt-24">
-        <AvailabilityBadge label="Available for projects" />
+        <AvailabilityBadge label={heroData.availability.label} />
 
         {/* Right side testimonial section */}
         <Testimonials />
 
         {/* Intro */}
         <div className="flex flex-col gap-2 items-center py-5 font-semibold font-cormorant-upright text-5xl">
-          <div>Hey There! I'm <span className="text-4xl italic bg-white text-theme-blue rounded-full px-6 pb-1">Dipraj</span></div>
+          <div>{heroData.intro.greeting} <span className="text-4xl italic bg-white text-theme-blue rounded-full px-6 pb-1">{heroData.intro.name}</span></div>
           <div>a <CareerCarousel /> </div>
         </div>
 
         {/* Display text */}
         <div className="relative flex flex-col items-center gap-1 font-space-grotesk text-7xl font-bold">
-          <div>Building Solutions</div>
-          <div>That <div className="relative inline-block">
-            Scale
+          <div>{heroData.headline.firstLine}</div>
+          <div>{heroData.headline.secondLine} <div className="relative inline-block">
+            {heroData.headline.highlightedWord}
 
             <svg
               className="absolute -bottom-6 left-1/2 w-[110%] -translate-x-1/2 animate-underline"
@@ -54,20 +55,20 @@ const Hero = () => {
         {/* Description Text */}
         <div className="flex flex-col items-center pt-12 text-theme-gray text-lg font-space-grotesk font-normal">
           <div>
-            <span>Websites, web applications, and SaaS products crafted with precision, </span>
+            <span>{heroData.description.line1} </span>
           </div>
           <div>
-            <span>performance, and long-term scalability.</span>
+            <span>{heroData.description.line2}</span>
           </div>
         </div>
 
         {/* CTA Section */}
        <div className="flex items-center justify-center gap-4 pt-12">
         <div>
-          <ProjectButton label="Start a Project" action="#"/>
+          <ProjectButton label={heroData.cta.primary.label} action={heroData.cta.primary.action}/>
         </div>
         <div>
-          <OutlinedCTA label="View My Work" action="#" />
+          <OutlinedCTA label={heroData.cta.secondary.label} action={heroData.cta.secondary.action} />
         </div>
        </div>
 

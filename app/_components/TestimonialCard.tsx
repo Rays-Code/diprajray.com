@@ -1,20 +1,7 @@
 import Image from "next/image";
 import Avatar from "./Avatar";
+import { TestimonialProps } from "../_types/testimonialCard";
 
-interface TestimonialProps extends Testimonial {
-    isTop?: boolean;
-    showContent?: boolean;
-}
-
-interface Testimonial {
-    avatar: string;
-    description: string;
-    rating: number;
-    name: string;
-    designation: string;
-    company: string;
-    companyLogo: string;
-}
 
 const TestimonialCard = ({
     avatar,
