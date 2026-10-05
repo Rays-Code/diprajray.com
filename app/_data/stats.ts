@@ -9,14 +9,14 @@ const stats: stat[] = [
         alt: "projects icon"
     },
     {
-        heading: "10+ clients across sectors",
+        heading: "10+ Clients & Collaborations",
         src: "/ui/handshake.png",
         width: 28,
         height: 28, 
         alt: "handshake icon"
     },
     {
-        heading: "2+ years of experience",
+        heading: "2+ Years Building for the Web",
         src: "/ui/verified.png",
         width: 30,
         height: 30, 

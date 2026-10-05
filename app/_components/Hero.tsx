@@ -5,7 +5,6 @@ import AvailabilityBadge from "../_ui/AvailabilityBadge"
 import CareerCarousel from "../_ui/CareerCarousel"
 import OutlinedCTA from "../_ui/OutlinedCTA"
 import ProjectButton from "../_ui/ProjectButton"
-import Navbar from "./Navbar"
 import Stats from "./Stats"
 import Testimonials from "./Testimonials";
 import heroData from "../_data/hero";
@@ -13,12 +12,10 @@ import heroData from "../_data/hero";
 
 const Hero = () => {
   return (
-    <div className="min-h-screen bg-[url('/bg/hero_bg.png')] pt-8">
+    <div className="min-h-screen">
 
-      <Navbar />
-
-      <motion.div initial={{ opacity: 0, y:50 }} animate={{ opacity:1, y:0 }} transition={{ duration: 0.8, ease: "easeOut" }} className="relative flex flex-col justify-center items-center pt-24">
-        <AvailabilityBadge label={heroData.availability.label} />
+      <motion.div initial={{ opacity: 0, y:50 }} animate={{ opacity:1, y:0 }} transition={{ duration: 0.8, ease: "easeOut" }} className="relative flex flex-col justify-center items-center pt-18">
+        <AvailabilityBadge label={heroData.availability.label} country={heroData.availability.country.name} src={heroData.availability.country.src} alt={heroData.availability.country.alt}/>
 
         {/* Right side testimonial section */}
         <Testimonials />
@@ -26,24 +23,24 @@ const Hero = () => {
         {/* Intro */}
         <div className="flex flex-col gap-2 items-center py-5 font-semibold font-cormorant-upright text-5xl">
           <div>{heroData.intro.greeting} <span className="text-4xl italic bg-white text-theme-blue rounded-full px-6 pb-1">{heroData.intro.name}</span></div>
-          <div>a <CareerCarousel /> </div>
+          <div>a <CareerCarousel /></div>
         </div>
 
         {/* Display text */}
-        <div className="relative flex flex-col items-center gap-1 font-space-grotesk text-7xl font-bold">
+        <div className="relative flex flex-col items-center gap-1 font-space-grotesk text-6xl font-bold pt-4">
           <div>{heroData.headline.firstLine}</div>
           <div>{heroData.headline.secondLine} <div className="relative inline-block">
             {heroData.headline.highlightedWord}
 
             <svg
-              className="absolute -bottom-6 left-1/2 w-[110%] -translate-x-1/2 animate-underline"
+              className="absolute -bottom-4 left-1/2 w-[110%] -translate-x-1/2 animate-underline"
               viewBox="0 0 200 40"
               fill="none"
             >
               <path
                 d="M25 35 C65 22, 100 10, 180 12"
                 stroke="#3038FF"
-                strokeWidth="5"
+                strokeWidth="7"
                 strokeLinecap="round"
               />
             </svg>

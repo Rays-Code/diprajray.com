@@ -1,3 +1,5 @@
+"use client";
+
 import Link from "next/link";
 import Image from "next/image";
 import CTA from "../_ui/CTA";
@@ -6,7 +8,7 @@ import { motion } from "motion/react";
 
 const Navbar = () => {
     return (
-        <motion.div initial={{ opacity: 0, y: -50 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, ease: "easeOut" }} className="flex justify-center items-center py-6 font-inter text-base font-medium text-[#CDCDCD]">
+        <motion.div initial={{ opacity: 0, y: -50 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, ease: "easeOut" }} className="fixed top-0 left-0 z-50 w-full flex justify-center items-center pt-16 pb-6 font-inter text-base font-medium text-[#CDCDCD]">
             <div className="flex items-center justify-between gap-45 bg-white/10 backdrop-blur-md border border-white/10 shadow-lg px-6 rounded-full">
 
                 {/* Profile section */}
@@ -16,7 +18,7 @@ const Navbar = () => {
                         <Image src={navData.logo.src} unoptimized width={60} height={60} alt={navData.logo.name}/>
                     </div>
                     {/* Avatar */}
-                    <div className="-ml-7 border-3 border-theme-blue rounded-full">
+                    <div className="-ml-7 border-3 border-theme-blue rounded-full cursor-pointer hover:-rotate-7 hover:scale-108 transition-all duration-300">
                         <Image src={navData.avatar.src} unoptimized width={25} height={25} alt={navData.avatar.name} className="rounded-full" />
                     </div>
                 </div>

@@ -1,7 +1,9 @@
+"use client";
+
 import Image from "next/image";
 import Avatar from "./Avatar";
 import { TestimonialProps } from "../_types/testimonialCard";
-
+import { motion } from "motion/react";
 
 const TestimonialCard = ({
     avatar,
@@ -12,72 +14,111 @@ const TestimonialCard = ({
     company,
     companyLogo,
     isTop = false,
-    showContent = false,
+    showDots = false,
+    activeIndex = 0,
+    totalTestimonials = 0,
+    contentOpacity = 1,
 }: TestimonialProps) => {
     return (
         <div
-            className={`
-                relative
-                w-[295px] h-[210px]
-                bg-white/5
-                border border-white/10
-                rounded-2xl
-                p-6
-                ${isTop ? "backdrop-blur-2xl" : ""}
-            `}
-        >
-            {showContent && (
-                <>
-                    <Avatar
-                        src={avatar}
-                        avatarName="demo avatar"
-                    />
+    className={`
+        relative
+        w-[295px] h-[210px]
+        rounded-2xl
+        p-6
+        border
+        ${isTop
+            ? "bg-white/5 border-white/10 backdrop-blur-2xl shadow-[0_8px_32px_rgba(0,0,0,0.15)]"
+            : "bg-white/3 border-white/5"
+        }
+    `}
+>
+            {/* Testimonial content */}
+            <motion.div
+                animate={{
+                    opacity: contentOpacity,
+                }}
+                transition={{
+                    duration: 0.35,
+                    ease: "easeInOut",
+                }}
+            >
+                <Avatar
+                    src={avatar}
+                    avatarName="demo avatar"
+                />
 
-                    <div className="flex flex-col items-center">
+                <div className="flex flex-col items-center">
 
-                        <div className="pt-5">
-                            <p className="text-center text-[11px] font-light font-inter leading-[1.4]">
-                                {description}
-                            </p>
-                        </div>
+                    <div className="pt-5">
+                        <p className="text-center text-[11px] font-light font-inter leading-[1.4]">
+                            {description}
+                        </p>
+                    </div>
 
-                        <div className="flex items-center pt-2">
-                            {Array.from({ length: Math.round(rating) }).map((_, idx) => (
-                                <Image
-                                    key={idx}
-                                    src="/ui/star.svg"
-                                    width={20}
-                                    height={20}
-                                    alt="rating star"
-                                />
-                            ))}
-                        </div>
-
-                        <div className="pt-5">
-                            <p className="font-bold font-poppins text-[10px]">
-                                {name}
-                            </p>
-                        </div>
-
-                        <div className="flex items-center font-space-grotesk">
-                            <p className="text-[10px] font-light">
-                                {designation},
-                            </p>
-
+                    <div className="flex items-center pt-2">
+                        {Array.from({
+                            length: Math.round(rating)
+                        }).map((_, idx) => (
                             <Image
-                                src={companyLogo}
+                                key={idx}
+                                src="/ui/star.svg"
                                 width={20}
                                 height={20}
-                                alt={`${company}'s Logo`}
+                                alt="rating star"
                             />
-
-                            <p className="text-[10px] font-semibold">
-                                {company}
-                            </p>
-                        </div>
-
+                        ))}
                     </div>
-                </>
+
+                    <div className="pt-5">
+                        <p className="font-bold font-poppins text-[10px]">
+                            {name}
+                        </p>
+                    </div>
+
+                    <div className="flex items-center font-space-grotesk">
+                        <p className="text-[10px] font-light">
+                            {designation},
+                        </p>
+
+                        <Image
+                            src={companyLogo}
+                            width={20}
+                            height={20}
+                            alt={`${company}'s Logo`}
+                        />
+
+                        <p className="text-[10px] font-semibold">
+                            {company}
+                        </p>
+                    </div>
+
+                </div>
+            </motion.div>
+
+            {/* Pagination dots */}
+            {showDots && (
+                <div className="absolute bottom-3 left-1/2 flex -translate-x-1/2 items-center gap-1.5">
+                    {Array.from({
+                        length: totalTestimonials
+                    }).map((_, idx) => {
+                        const isActive = idx === activeIndex;
+
+                        return (
+                            <span
+                                key={idx}
+                                className={`
+                                    h-1 rounded-full transition-all duration-300
+                                    ${
+                                        isActive
+                                            ? "w-4 bg-theme-green"
+                                            : "w-1 bg-theme-green/40"
+                                    }
+                                `}
+                            />
+                        );
+                    })}
+                </div>
             )}
         </div>
     );

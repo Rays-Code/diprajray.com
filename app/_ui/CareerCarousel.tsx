@@ -2,15 +2,14 @@
 
 import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "motion/react";
-
-const careers = ["Web Developer", "Designer", "Engineer"];
+import heroData from "../_data/hero";
 
 const CareerCarousel = () => {
     const [index, setIndex] = useState(0);
 
     useEffect(() => {
         const interval = setInterval(() => {
-            setIndex((prev) => (prev + 1) % careers.length);
+            setIndex((prev) => (prev + 1) % heroData.intro.careers.length);
         }, 2000);
 
         return () => clearInterval(interval);
@@ -40,7 +39,7 @@ const CareerCarousel = () => {
         >
             <AnimatePresence mode="wait">
                 <motion.span
-                    key={careers[index]}
+                    key={heroData.intro.careers[index]}
                     initial={{ opacity: 0, y: 8 }}
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: -8 }}
@@ -49,7 +48,7 @@ const CareerCarousel = () => {
                         ease: "easeOut",
                     }}
                 >
-                    {careers[index]}
+                    {heroData.intro.careers[index]}
                 </motion.span>
             </AnimatePresence>
         </motion.span>

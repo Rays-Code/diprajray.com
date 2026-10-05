@@ -30,10 +30,18 @@
   --font-space-grotesk: var(--font-space-grotesk-variable);
   --font-hanken-grotesk: var(--font-hanken-grotesk-variable);
   --font-geist-mono: var(--font-geist-mono-variable);
+  --font-ibm-plex-mono: var(--font-ibm-plex-mono-variable);
+  --font-jetbrains-mono: var(--font-jetbrains-mono-variable);
+  --font-satoshi: var(--font-satoshi-variable);
+  --font-google-sans-code: var(--font-google-sans-code-variable);
 }
 
 body {
   background: var(--background);
+  /* background-image: url("/bg/hero_bg.png"); */
+  background-repeat: repeat;
+  background-size: cover;
+
   color: var(--foreground);
   font-family: var(--font-space-grotesk);
 }
@@ -89,4 +97,23 @@ body {
   stroke-dasharray: 200;
   stroke-dashoffset: 200;
   animation: drawTestimonialUnderline 0.8s ease-out 0.5s forwards;
+}
+
+
+.w {
+  animation: wave 4.8s ease-in-out infinite;
+  opacity: 0.15;
+}
+
+.d1 { animation-delay: 0s; }
+.d2 { animation-delay: 0.6s; }
+.d3 { animation-delay: 1.2s; }
+.d4 { animation-delay: 1.8s; }
+
+@keyframes wave {
+  0%   { opacity: 0.15; }
+  8%   { opacity: 1; }
+  55%  { opacity: 1; }
+  70%  { opacity: 0.15; }
+  100% { opacity: 0.15; }
 }
