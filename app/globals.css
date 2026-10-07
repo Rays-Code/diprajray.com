@@ -117,3 +117,22 @@ body {
   70%  { opacity: 0.15; }
   100% { opacity: 0.15; }
 }
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill {
+  -webkit-text-fill-color: #fff;
+  -webkit-box-shadow: 0 0 0 1000px #000 inset;
+  caret-color: #fff;
+  transition: background-color 9999s ease-in-out 0s;
+}
+
+html {
+  scrollbar-width: none;
+}
+
+/* Chrome, Edge, Safari */
+html::-webkit-scrollbar {
+  display: none;
+}

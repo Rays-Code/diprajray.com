@@ -62,7 +62,7 @@ const expData = {
                 },
                 current: false,
                 location: "Texas, US • Remote ",
-                duration: "May 2026 - Jul 2026",
+                duration: "May 2025 - Jul 2025",
                 description: ["Developed and deployed RESTful APIs using Node.js, integrating SQL and NoSQL databases with optimized queries that reduced average data retrieval time by 25%.", 
                               "Delivered pixel-perfect, responsive UI components using React and Tailwind CSS, achieving design parity across 3 major product pages.",
                               "Built secure image storage and restoration pipelines using Multer and AWS S3, handling 100% of user-generated content uploads with zero data loss incidents.",
