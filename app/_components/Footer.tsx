@@ -1,3 +1,5 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link"
 import footerData from "../_data/footer";
@@ -60,7 +62,18 @@ const Footer = () => {
             <div className="text-sm font-semibold">{footerData?.navigate?.heading}</div>
             <div className="grid grid-cols-5 gap-4 pt-4 text-gray-500">
               {footerData?.navigate?.options?.map((nav, idx) => {
-                return <Link key={idx} href={nav.href}>{nav.name}</Link>
+                return <a key={idx} href={nav.href} onClick={(e) => {
+                  if (nav.name === "Resume") {
+                    e.preventDefault();
+
+                    window.open(nav.href, "_blank");
+
+                    const link = document.createElement("a");
+                    link.href = nav.href;
+                    link.download = "Dipraj-Ray-Resume.pdf";
+                    link.click();
+                  }
+                }}>{nav.name}</a>
               })}
             </div>
           </div>
@@ -68,7 +81,7 @@ const Footer = () => {
             <div className="text-sm font-semibold">{footerData?.connect?.heading}</div>
             <div className="grid grid-cols-5 gap-3 pt-4">
               {footerData?.connect?.options?.map((social, idx) => {
-                return <a target="_blank" key={idx} href={`${social.name === "Email"? `mailto:${social?.email}`: `${social?.href}`}`} className="border border-gray-400/20 bg-[#030304] rounded-md p-[2px] flex justify-center items-center">
+                return <a target={`${social.name !== "Email"? "_blank": ""}`} key={idx} href={`${social.name === "Email"? `mailto:${social?.email}`: `${social?.href}`}`} className="border border-gray-400/20 bg-[#030304] rounded-md p-[2px] flex justify-center items-center">
                   <Image src={social.img} width={32} height={32} alt={social.name} />
                 </a>
               })}

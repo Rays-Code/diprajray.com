@@ -8,6 +8,7 @@ import ProjectButton from "../_ui/ProjectButton"
 import Stats from "./Stats"
 import Testimonials from "./Testimonials";
 import heroData from "../_data/hero";
+import Image from "next/image";
 
 
 const Hero = () => {
@@ -60,7 +61,7 @@ const Hero = () => {
         </div>
 
         {/* CTA Section */}
-       <div className="flex items-center justify-center gap-4 pt-12">
+       <div className="flex items-center justify-center gap-4 pt-10">
         <div>
           <ProjectButton label={heroData.cta.primary.label} action={heroData.cta.primary.action}/>
         </div>
@@ -69,8 +70,24 @@ const Hero = () => {
         </div>
        </div>
 
-       {/* Horizontal divider */}
-       <div className="pt-14">
+       {/* Skills section */}
+        <ul className="flex flex-wrap items-center justify-center gap-2.5 pt-10">
+          {heroData?.skills?.map((skill) => (
+            <li
+              key={skill.name}
+              className={`flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-3.5 py-1.5
+                  text-sm text-white/80 transition-colors hover:text-white ${skill.hover}`}
+            >
+              <span className={`flex h-5 w-5 items-center justify-center rounded-full ${skill.iconBg}`}>
+                <Image src={skill.src} width={16} height={16} alt={skill.name} className=""/>
+              </span>
+              {skill.name}
+            </li>
+          ))}
+        </ul>
+
+       {/* Horizontal divider - pt-14 */}
+       <div className="pt-10"> 
         <div className="h-[0.08px] w-[700px] bg-theme-gray opacity-20"></div>
        </div>
 

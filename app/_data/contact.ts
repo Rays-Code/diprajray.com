@@ -20,7 +20,7 @@ const contactData = {
             }
         },
         desc: "Whether you have a project, a question, or just want to connect, I'm here to help. Let's create something amazing together.",
-        email: "raydipraj1234@gmail.com"
+        email: "raydipraj.official@gmail.com"
     },
 
     right: {
@@ -74,7 +74,7 @@ const contactData = {
             error: {
                 heading: "Couldn't send",
                 desc: "Something broke on my end. Please try again, or email me directly at",
-                email: "raydipraj1234@gmail.com"
+                email: "raydipraj.official@gmail.com"
             },
             topic: {
                 heading: "Pick a project type",

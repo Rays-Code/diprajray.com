@@ -26,6 +26,7 @@ const navData = {
         src: "/diprajray-avatar.png",
         name: "diprajray's avatar"
     },
+    email: "raydipraj.official@gmail.com",
     cta: {
         label: "Let's Talk",
         action: "#contact"

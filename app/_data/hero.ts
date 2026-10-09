@@ -35,7 +35,15 @@ const heroData = {
             label: "View My Work",
             action: "#projects",
         },
-    }
+    },
+
+    skills: [
+        { name: "Next.js", src: "/dev-icons/nextjs-icon.svg", hover: "hover:border-white", iconBg: "" },
+        { name: "Node.js", src: "/dev-icons/nodejs-icon.svg", hover: "hover:border-[#339933]", iconBg: "" },
+        { name: "TypeScript", src: "/dev-icons/typescript-icon.svg", hover: "hover:border-[#3178C6]", iconBg: "" },
+        { name: "PostgreSQL", src: "/dev-icons/postgresql.svg", hover: "hover:border-[#336791]", iconBg: "" },
+        { name: "AWS", src: "/dev-icons/aws-TP.svg", hover: "hover:border-[#FF9900]", iconBg: "bg-white p-0.5" },
+    ]
 };
 
 export default heroData;

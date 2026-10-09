@@ -15,7 +15,7 @@ const footerData = {
             },
             {
                 name: "Resume",
-                href: "#"
+                href: "/Dipraj_Ray_Resume.pdf"
             },
             {
                 name: "Projects",
@@ -41,15 +41,15 @@ const footerData = {
                 img: "/dev-icons/github.svg",
                 href: "https://github.com/Rays-Code"
             },
-            {
-                name: "X",
-                img: "/dev-icons/x.svg",
-                href: "#"
-            },
+            // {
+            //     name: "X",
+            //     img: "/dev-icons/x.svg",
+            //     href: "#"
+            // },
             {
                 name: "Email",
                 img: "/dev-icons/email.svg",
-                email: "raydipraj1234@gmail.com"
+                email: "raydipraj.official@gmail.com"
             }
         ]
     },

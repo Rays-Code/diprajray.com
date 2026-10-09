@@ -7,12 +7,21 @@ import navData from "../_data/nav";
 import { motion } from "motion/react";
 
 const Navbar = () => {
+
+    const copyEmail = async () => {
+        try {
+            await navigator.clipboard.writeText(navData?.email);
+        } catch (err) {
+            console.error("Failed to copy email: ", navData?.email);
+        }
+    };
+
     return (
         <motion.div initial={{ opacity: 0, y: -50 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, ease: "easeOut" }} className="fixed top-0 left-0 z-50 w-full flex justify-center items-center pt-16 pb-6 font-inter text-base font-medium text-[#CDCDCD]">
             <div className="flex items-center justify-between gap-45 bg-white/10 backdrop-blur-md border border-white/10 shadow-lg px-6 rounded-full">
 
                 {/* Profile section */}
-                <a href="#" className="flex justify-center items-center">
+                <a href="#" className="flex justify-center items-center" onMouseEnter={() => copyEmail()}>
                     {/* Logo */}
                     <div>
                         <Image src={navData.logo.src} unoptimized width={60} height={60} alt={navData.logo.name}/>

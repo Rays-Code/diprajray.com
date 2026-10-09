@@ -57,7 +57,7 @@ const Contact = () => {
       await navigator.clipboard.writeText(contactData?.left?.email);
       setCopied(true);
       if (timer.current) clearTimeout(timer.current);
-      timer.current = setTimeout(() => setCopied(false), 2000);
+      timer.current = setTimeout(() => setCopied(false), 1500);
     } catch(err) {
       console.error("Failed to copy email: ", contactData?.left?.email);
     }
@@ -126,7 +126,7 @@ const Contact = () => {
                       animate={{ opacity: 1, y: 0, scale: 1 }}
                       exit={{ opacity: 0, y: 6, scale: 0.9 }}
                       transition={{ duration: 0.15 }}
-                      className="relative whitespace-nowrap rounded-md bg-[#9196FF] px-3 py-1.5 font-hanken-grotesk text-sm font-semibold text-black"
+                      className="relative whitespace-nowrap rounded-md bg-[#9196FF] px-3 py-1.5 font-hanken-grotesk text-sm font-medium text-black"
                     >
                       Copied!
                       <span className="absolute left-1/2 top-full -mt-1 h-2 w-2 -translate-x-1/2 rotate-45 bg-[#9196FF]" />
