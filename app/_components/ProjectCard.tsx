@@ -5,13 +5,14 @@ import { ArrowUpRight } from "lucide-react";
 import projectData from "../_data/projects";
 import { Project } from "../_types/projects";
 
-const GithubIcon = () => (
+const GithubIcon = ({active}: {active: boolean}) => (
     <svg
         role="img"
         viewBox="0 0 24 24"
         width="16"
         height="16"
         fill="currentColor"
+        className={`${active? "opacity-100": "opacity-70"}`}
     >
         <path d={siGithub.path} />
     </svg>
@@ -21,28 +22,28 @@ const GithubIcon = () => (
 const ProjectCard = ({ proj }: { proj: Project }) => {
     return (
         <>
-            <div key={proj.heading.text} className="relative flex items-center justify-between min-w-full min-h-75 pr-6 pb-12 backdrop-blur-lg bg-[#18181B] shadow-xl cursor-pointer rounded-lg overflow-hidden group">
+            <div key={proj?.heading?.text} className="relative flex items-center justify-between min-w-full min-h-75 pr-6 pb-12 backdrop-blur-lg bg-[#18181B] shadow-xl cursor-pointer rounded-lg overflow-hidden group">
 
-                {proj.banner?.pos === "left" ? <div className="w-full h-full flex justify-between">
+                {proj?.banner?.pos === "left" ? <div className="w-full h-full flex justify-between">
                     <div>
                         <div className="relative h-full">
-                            {proj.banner?.type === "image" ? (
+                            {proj?.banner?.type === "image" ? (
                                 <div className="absolute left-16 -bottom-14 min-w-156 min-h-40">
 
                                     <div className="flex justify-start items-end gap-3 max-w-125">
-                                        {proj.banner.screens?.map((screen) => (
+                                        {proj?.banner?.screens?.map((screen) => (
                                             <div
-                                                key={screen.name}
-                                                className={`relative w-38 h-78 overflow-hidden rounded-t-lg ${screen.pos === "left"
+                                                key={screen?.name}
+                                                className={`relative w-38 h-78 overflow-hidden rounded-t-lg ${screen?.pos === "left"
                                                     ? "-rotate-4 translate-y-46 group-hover:-rotate-7 group-hover:translate-y-42 group-hover:scale-102 transition-all duration-400"
-                                                    : screen.pos === "right"
+                                                    : screen?.pos === "right"
                                                         ? "rotate-7 translate-y-46 group-hover:rotate-9 group-hover:translate-y-42 group-hover:scale-102 transition-all duration-400"
                                                         : "rotate-0 translate-y-38 group-hover:translate-y-34 group-hover:scale-102 transition-all duration-400"
                                                     }`}
                                             >
                                                 <Image
-                                                    src={screen.src}
-                                                    alt={screen.name}
+                                                    src={screen?.src}
+                                                    alt={screen?.name}
                                                     fill
                                                     sizes="160px"
                                                     quality={100}
@@ -54,7 +55,7 @@ const ProjectCard = ({ proj }: { proj: Project }) => {
 
                                 </div>
                             ) : (
-                                <div style={{ width: proj?.banner.videoWidth }} className={`absolute -bottom-20 left-16 h-77 overflow-hidden rounded-t-xl -rotate-2 group-hover:-rotate-4 group-hover:-bottom-18 group-hover:scale-102 transition-all duration-500`}>
+                                <div style={{ width: proj?.banner?.videoWidth }} className={`absolute -bottom-20 left-16 h-77 overflow-hidden rounded-t-xl -rotate-2 group-hover:-rotate-4 group-hover:-bottom-18 group-hover:scale-102 transition-all duration-500`}>
                                     <video
                                         src={proj.banner?.video}
                                         autoPlay
@@ -76,7 +77,7 @@ const ProjectCard = ({ proj }: { proj: Project }) => {
                             <div className="pt-8 pb-2 flex justify-end max-w-420">
                                 <div>
                                     <span className="text-5xl font-bold font-satoshi tracking-[-1px] break-words">
-                                        {proj.heading.text}
+                                        {proj?.heading?.text}
                                     </span>
                                 </div>
                             </div>
@@ -85,7 +86,7 @@ const ProjectCard = ({ proj }: { proj: Project }) => {
                             <div className="pt-1 pb-4 max-w-164">
                                 <div>
                                     <p className="font-inter text-md text-gray-500 font-regular text-right">
-                                        {proj.description.text}
+                                        {proj?.description?.text}
                                     </p>
                                 </div>
                             </div>
@@ -108,7 +109,7 @@ const ProjectCard = ({ proj }: { proj: Project }) => {
                         <div className="flex items-center justify-end gap-4 pt-3 pb-6 text-white">
 
                             {/* Live site */}
-                            <a href={proj.live.url} target="_blank" className={`flex justify-center items-center gap-2 px-4 py-2 rounded-lg ${proj.live.color} font-normal font-google-sans-code text-white text-md cursor-pointer shadow-2xl hover:scale-102 backdrop-blur-md transition-all duration-100`}>
+                            <a href={proj?.live?.url} target="_blank" className={`flex justify-center items-center gap-2 px-4 py-2 rounded-lg ${proj?.live?.color} font-normal font-google-sans-code text-white text-md cursor-pointer shadow-2xl hover:scale-102 backdrop-blur-md transition-all duration-100`}>
                                 <div>
                                     <Globe size={16} className="opacity-80" />
                                 </div>
@@ -116,11 +117,21 @@ const ProjectCard = ({ proj }: { proj: Project }) => {
                             </a>
 
                             {/* Github button */}
-                            <a href={proj.githubUrl} target="_blank" className="flex gap-2 justify-center items-center border border-gray-700 rounded-lg py-2 px-4 text-md font-normal font-google-sans-code shadow-2xl cursor-pointer hover:scale-102 hover:bg-gray-900 hover:text-white backdrop-blur-md transition-all duration-100">
-                                <div>
-                                    <GithubIcon />
-                                </div>
-                                <div>Source Code</div>
+                            <a
+                                href={proj?.githubUrl || undefined}
+                                target={proj?.githubUrl ? "_blank" : undefined}
+                                rel={proj?.githubUrl ? "noopener noreferrer" : undefined}
+                                className={`flex gap-2 justify-center items-center border border-gray-700 rounded-lg py-2 px-4 text-md font-normal font-google-sans-code shadow-2xl backdrop-blur-md transition-all duration-100
+                                ${proj?.githubUrl
+                                        ? "cursor-pointer hover:scale-102 hover:bg-gray-900 hover:text-white"
+                                        : "cursor-not-allowed pointer-events-none"
+                                    }`}
+                            >
+                                <GithubIcon active={!!proj?.githubUrl}/>
+
+                                <span className={!proj?.githubUrl ? "text-gray-400" : ""}>
+                                    {proj?.githubUrl ? "Source Code" : "Private"}
+                                </span>
                             </a>
 
                         </div>
@@ -132,7 +143,7 @@ const ProjectCard = ({ proj }: { proj: Project }) => {
                             <div className="pt-8 pb-2 flex justify-start max-w-420">
                                 <div>
                                     <span className="text-5xl font-bold font-satoshi tracking-[-1px] break-words">
-                                        {proj.heading.text}
+                                        {proj?.heading?.text}
                                     </span>
                                 </div>
                             </div>
@@ -141,7 +152,7 @@ const ProjectCard = ({ proj }: { proj: Project }) => {
                             <div className="pt-1 pb-4 max-w-140">
                                 <div>
                                     <p className="font-inter text-md text-gray-500 font-regular text-left">
-                                        {proj.description.text}
+                                        {proj?.description?.text}
                                     </p>
                                 </div>
                             </div>
@@ -164,7 +175,7 @@ const ProjectCard = ({ proj }: { proj: Project }) => {
                         <div className="flex items-center justify-start gap-4 pt-3 pb-6 text-white">
 
                             {/* Live site */}
-                            <a href={proj.live.url} target="_blank" className={`flex justify-center items-center gap-2 px-4 py-2 rounded-lg ${proj.live.color} font-normal font-google-sans-code text-white text-md cursor-pointer shadow-2xl hover:scale-102 backdrop-blur-md transition-all duration-100`}>
+                            <a href={proj?.live?.url} target="_blank" className={`flex justify-center items-center gap-2 px-4 py-2 rounded-lg ${proj.live.color} font-normal font-google-sans-code text-white text-md cursor-pointer shadow-2xl hover:scale-102 backdrop-blur-md transition-all duration-100`}>
                                 <div>
                                     <Globe size={16} className="opacity-80" />
                                 </div>
@@ -172,34 +183,44 @@ const ProjectCard = ({ proj }: { proj: Project }) => {
                             </a>
 
                             {/* Github button */}
-                            <a href={proj.githubUrl} target="_blank" className="flex gap-2 justify-center items-center border border-gray-700 rounded-lg py-2 px-4 text-md font-normal font-google-sans-code shadow-2xl cursor-pointer hover:scale-102 hover:bg-gray-900 hover:text-white backdrop-blur-md transition-all duration-100">
-                                <div>
-                                    <GithubIcon />
-                                </div>
-                                <div>Source Code</div>
+                            <a
+                                href={proj?.githubUrl || undefined}
+                                target={proj?.githubUrl ? "_blank" : undefined}
+                                rel={proj?.githubUrl ? "noopener noreferrer" : undefined}
+                                className={`flex gap-2 justify-center items-center border border-gray-700 rounded-lg py-2 px-4 text-md font-normal font-google-sans-code shadow-2xl backdrop-blur-md transition-all duration-100
+                                ${proj?.githubUrl
+                                        ? "cursor-pointer hover:scale-102 hover:bg-gray-900 hover:text-white"
+                                        : "cursor-not-allowed pointer-events-none"
+                                    }`}
+                            >
+                                <GithubIcon active={!!proj?.githubUrl}/>
+
+                                <span className={!proj?.githubUrl ? "text-gray-400" : ""}>
+                                    {proj?.githubUrl ? "Source Code" : "Private"}
+                                </span>
                             </a>
 
                         </div>
                     </div>
                     <div>
                         <div className="relative h-full">
-                            {proj.banner?.type === "image" ? (
+                            {proj?.banner?.type === "image" ? (
                                 <div className="absolute right-0 -top-30 min-w-130 min-h-40">
 
                                     <div className="flex justify-start items-end gap-3 max-w-125">
-                                        {proj.banner.screens?.map((screen) => (
+                                        {proj?.banner?.screens?.map((screen) => (
                                             <div
-                                                key={screen.name}
-                                                className={`relative w-38 h-82 overflow-hidden rounded-t-lg ${screen.pos === "left"
+                                                key={screen?.name}
+                                                className={`relative w-38 h-82 overflow-hidden rounded-t-lg ${screen?.pos === "left"
                                                     ? "-rotate-4 translate-y-46 group-hover:-rotate-7 group-hover:translate-y-42 group-hover:scale-102 transition-all duration-400"
-                                                    : screen.pos === "right"
+                                                    : screen?.pos === "right"
                                                         ? "rotate-7 translate-y-46 group-hover:rotate-9 group-hover:translate-y-42 group-hover:scale-102 transition-all duration-400"
                                                         : "rotate-0 translate-y-38 group-hover:translate-y-34 group-hover:scale-102 transition-all duration-400"
                                                     }`}
                                             >
                                                 <Image
-                                                    src={screen.src}
-                                                    alt={screen.name}
+                                                    src={screen?.src}
+                                                    alt={screen?.name}
                                                     fill
                                                     sizes="160px"
                                                     quality={100}
@@ -213,7 +234,7 @@ const ProjectCard = ({ proj }: { proj: Project }) => {
                             ) : (
                                 <div className="absolute -bottom-20 left-16 w-95 h-77 overflow-hidden rounded-t-xl -rotate-2 group-hover:-rotate-4 group-hover:-bottom-18 group-hover:scale-102 transition-all duration-500">
                                     <video
-                                        src={proj.banner?.video}
+                                        src={proj?.banner?.video}
                                         autoPlay
                                         muted
                                         loop

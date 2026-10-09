@@ -32,7 +32,7 @@ const cardVariants: Variants = {
 
 const Projects = () => {
   return (
-    <div className="flex flex-col justify-center items-center min-w-full">
+    <div id="projects" className="flex flex-col justify-center items-center min-w-full">
       <div>
         <SectionHeading heading={projectData.heading}/>
       </div>

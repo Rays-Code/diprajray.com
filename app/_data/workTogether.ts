@@ -13,16 +13,16 @@ const workTogetherData = {
         name: "Work together illustration",
         src: "/buildTogether.svg"
     },
-    CTA: {
-        contact: {
-            name: "Get in Touch",
-            href: ""
-        },
-        github: {
-            name: "View My GitHub",
-            href: ""
+        CTA: {
+            contact: {
+                name: "Get in Touch",
+                href: "#contact"
+            },
+            github: {
+                name: "View My GitHub",
+                href: "https://github.com/Rays-Code"
+            }
         }
-    }
 };
 
 export default workTogetherData;

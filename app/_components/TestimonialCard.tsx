@@ -25,7 +25,7 @@ const TestimonialCard = ({
         relative
         w-[295px] h-[210px]
         rounded-2xl
-        p-6
+        p-5
         border
         ${isTop
             ? "bg-white/5 border-white/10 backdrop-blur-2xl shadow-[0_8px_32px_rgba(0,0,0,0.15)]"
@@ -98,7 +98,7 @@ const TestimonialCard = ({
 
             {/* Pagination dots */}
             {showDots && (
-                <div className="absolute bottom-3 left-1/2 flex -translate-x-1/2 items-center gap-1.5">
+                <div className="absolute bottom-2 left-1/2 flex -translate-x-1/2 items-center gap-1.5">
                     {Array.from({
                         length: totalTestimonials
                     }).map((_, idx) => {

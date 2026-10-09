@@ -29,11 +29,11 @@ const heroData = {
     cta: {
         primary: {
             label: "Start a Project",
-            action: "#",
+            action: "#contact",
         },
         secondary: {
             label: "View My Work",
-            action: "#",
+            action: "#projects",
         },
     }
 };

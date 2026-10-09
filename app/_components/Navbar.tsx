@@ -12,7 +12,7 @@ const Navbar = () => {
             <div className="flex items-center justify-between gap-45 bg-white/10 backdrop-blur-md border border-white/10 shadow-lg px-6 rounded-full">
 
                 {/* Profile section */}
-                <div className="flex justify-center items-center">
+                <a href="#" className="flex justify-center items-center">
                     {/* Logo */}
                     <div>
                         <Image src={navData.logo.src} unoptimized width={60} height={60} alt={navData.logo.name}/>
@@ -21,20 +21,31 @@ const Navbar = () => {
                     <div className="-ml-7 border-3 border-theme-blue rounded-full cursor-pointer hover:-rotate-7 hover:scale-108 transition-all duration-300">
                         <Image src={navData.avatar.src} unoptimized width={25} height={25} alt={navData.avatar.name} className="rounded-full" />
                     </div>
-                </div>
+                </a>
 
                 {/* Nav items */}
                 <div className="flex gap-6">
-                    {navData.navItems.map((item) => (
+                    {navData.navItems.map((option, idx) => (
                         <motion.div
-                            key={item}
+                            key={idx}
                             className="relative"
                             initial="rest"
                             whileHover="hover"
                         >
-                            <Link href="#">
-                                {item}
-                            </Link>
+                            <a href={option?.href} rel="noopener noreferrer" onClick={(e) => {
+                                if (option.name === "Resume") {
+                                    e.preventDefault();
+
+                                    window.open(option.href, "_blank");
+
+                                    const link = document.createElement("a");
+                                    link.href = option.href;
+                                    link.download = "Dipraj-Ray-Resume.pdf";
+                                    link.click();
+                                }
+                            }}>
+                                {option?.name}
+                            </a>
 
                             <motion.span
                                 className="absolute -bottom-1 left-0 h-[2px] w-full bg-theme-blue"

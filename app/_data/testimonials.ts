@@ -25,34 +25,34 @@ const testimonialData: {
 
     allTestimonials: [
         {
-            avatar: "/demo-avatar.png",
+            avatar: "/clients/prajwal-client.png",
             description:
-                "Dipraj was great to work with. He understood the requirements quickly, communicated clearly throughout the project, and delivered a polished product that worked exactly as expected.",
+                "Dipraj combines strong technical skills with independent problem-solving, a proactive mindset, and a genuine willingness to learn. He takes ownership of his work and brings a positive attitude to the team.",
             rating: 5,
-            name: "Ashish Patidar",
+            name: "Prajwal N",
+            designation: "Founder",
+            company: "Vehiculr",
+            companyLogo: "/companies/Vehiculr_Logo_noBg.svg",
+        },
+        {
+            avatar: "/clients/diganta-mitra-client.png",
+            description:
+                "Dipraj quickly understood our requirements, delivered quality work on time, and kept us updated throughout. He was open to unlimited revisions and made the entire process smooth with his clear communication.",
+            rating: 5,
+            name: "Diganta Mitra",
             designation: "Founder",
             company: "Lemon Studios",
             companyLogo: "/companies/Lemon_Studios_Logo.svg",
         },
         {
-            avatar: "/demo-avatar3.avif",
+            avatar: "/clients/ashish-patidar-client.jpg",
             description:
-                "What stood out most was Dipraj's attention to detail. He was proactive with ideas, responsive to feedback, and made sure everything was refined before delivery.",
+                "Working with Dipraj was a great experience. He was proactive, handled both frontend and backend development with confidence, took feedback well, and always focused on making the final product better.",
             rating: 5,
-            name: "Rahul Mehta",
-            designation: "Product Manager",
-            company: "TechNova",
-            companyLogo: "/companies/Vehiculr_Logo.svg",
-        },
-        {
-            avatar: "/demo-avatar4.webp",
-            description:
-                "What stood out most was Dipraj's attention to detail. He was proactive with ideas, responsive to feedback, and made sure everything was refined before delivery.",
-            rating: 5,
-            name: "Rahul Mehta",
-            designation: "Product Manager",
-            company: "TechNova",
-            companyLogo: "/companies/Vehiculr_Logo.svg",
+            name: "Ashish Patidar",
+            designation: "Manager",
+            company: "Vehiculr",
+            companyLogo: "/companies/Vehiculr_Logo_noBg.svg",
         }
     ],
 };
