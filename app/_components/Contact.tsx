@@ -64,7 +64,7 @@ const Contact = () => {
   };
 
   return (
-    <div id="contact" className="flex flex-col items-center pt-28 lg:pt-44 px-3 lg:px-0">
+    <div id="contact" className="flex flex-col items-center pt-28 lg:pt-44 px-2 lg:px-0">
 
       {/* TOP SECTION */}
       <div className="flex flex-col justify-center items-center gap-6">

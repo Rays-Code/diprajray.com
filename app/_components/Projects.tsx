@@ -35,7 +35,7 @@ const Projects = () => {
       id="projects"
       className="flex w-full flex-col items-center justify-center overflow-hidden"
     >
-      <div className="pt-84 sm:pt-12 lg:pt-0">
+      <div className="pt-92 sm:pt-12 lg:pt-0">
         <SectionHeading heading={projectData.heading} />
       </div>
 
