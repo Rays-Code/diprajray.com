@@ -26,7 +26,7 @@ export const siteConfig = {
   siteUrl,
   locale: "en_IN",
   image: "/diprajray.png", // 1200x630
-  logo: "/diprajray.com-logo.png",
+  logo: "/_lib/favicon.ico",
   linkedIn: "https://www.linkedin.com/in/dipraj-ray/",
   github: "https://github.com/Rays-Code",
   email: "raydipraj.official@gmail.com",
