@@ -4,7 +4,7 @@ import stats from "../_data/stats";
 const Stats = () => {
   return (
     <div>
-        <div className="w-full flex justify-center items-center gap-6 lg:gap-16 pt-5 lg:pt-7 text-[10px] lg:text-base font-inter text-gray-400 px-4">
+        <div className="w-full flex justify-center items-center gap-6 lg:gap-16 pt-5 lg:pt-12 text-[10px] lg:text-base font-inter text-gray-400 px-4">
 
               {stats.map((stat, idx) => {
                   return <div key={idx} className="flex justify-center items-center gap-8 lg:gap-16">

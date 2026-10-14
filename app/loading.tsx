@@ -15,8 +15,8 @@ export default function Loading() {
 
       {/* Text */}
       <p className="relative text-2xl font-semibold text-white md:text-3xl">
-        <span className="inline-block rounded-full bg-[#2E37FE] px-5 py-1 font-serif italic font-medium">
-          Loading...
+        <span className="inline-block rounded-full bg-[#2E37FE] px-5 py-1 font-cormorant-upright italic font-medium">
+          Loading
         </span>
         <span className="ml-1 inline-flex gap-1 align-middle">
           <span className="h-1.5 w-1.5 animate-bounce rounded-full bg-white [animation-delay:-0.3s]" />

@@ -27,7 +27,7 @@ const navData = {
         }
     ],
     avatar: {
-        src: "/diprajray-avatar.png",
+        src: "/diprajray.png",
         name: "diprajray's avatar"
     },
     email: "raydipraj.official@gmail.com",

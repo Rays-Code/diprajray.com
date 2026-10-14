@@ -68,7 +68,7 @@ const Testimonials = () => {
             onMouseLeave={handleMouseLeave}
             className="absolute top-full left-1/2 -translate-x-1/2
            mt-4 flex flex-col items-center justify-center
-           lg:top-[36%] lg:left-[min(calc(50%+430px),calc(100%-380px))] lg:translate-x-0 lg:mt-0 pt-14 lg:pt-0"
+           lg:top-[36%] lg:left-[min(calc(50%+410px),calc(100%-380px))] lg:translate-x-0 lg:mt-0 pt-14 lg:pt-0"
         >
             {/* Heading */}
             <div className="flex items-center justify-center">

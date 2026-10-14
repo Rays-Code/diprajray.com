@@ -17,6 +17,12 @@ import localFont from "next/font/local";
 import "./globals.css";
 import Navbar from "./_components/Navbar";
 import Footer from "./_components/Footer";
+import {
+  absoluteUrl,
+  createPersonSchema,
+  createWebsiteSchema,
+  siteConfig,
+} from "./_lib/seo";
 
 const inter = Inter({
   variable: "--font-inter-variable",
@@ -97,11 +103,69 @@ const googleSansCode = Google_Sans_Code({
   weight: ["300", "400", "500", "600", "700", "800"],
 });
 
-
 export const metadata: Metadata = {
-  title: "diprajray.com",
-  description: "Building modern digital products that look great, perform fast, and solve real business problems.",
+  metadataBase: new URL(siteConfig.siteUrl),
+  title: {
+    default: siteConfig.title,
+    template: "%s | Dipraj Ray",
+  },
+  description: siteConfig.description,
+  applicationName: siteConfig.name,
+  keywords: [...siteConfig.keywords],
+  authors: [{ name: siteConfig.name, url: siteConfig.siteUrl }],
+  creator: siteConfig.name,
+  publisher: siteConfig.name,
+  alternates: {
+    canonical: siteConfig.siteUrl,
+  },
+  category: "technology",
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+      "max-video-preview": -1,
+    },
+  },
+  openGraph: {
+    title: siteConfig.title,
+    description: siteConfig.description,
+    url: siteConfig.siteUrl,
+    siteName: siteConfig.name,
+    locale: siteConfig.locale,
+    type: "website",
+    images: [
+      {
+        url: absoluteUrl(siteConfig.image),
+        width: 1200,
+        height: 630,
+        alt: "Dipraj Ray, Full Stack Developer",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: siteConfig.title,
+    description: siteConfig.description,
+    images: [absoluteUrl(siteConfig.image)],
+  },
+  icons: {
+    icon: [
+      { url: siteConfig.logo },
+      { url: siteConfig.logo, sizes: "32x32", type: "image/png" },
+      { url: siteConfig.logo, sizes: "16x16", type: "image/png" },
+    ],
+    shortcut: siteConfig.logo,
+    apple: siteConfig.logo,
+  },
 };
+
+// Escaping "<" keeps the JSON safe inside a <script> tag
+const toJsonLd = (data: object) =>
+  JSON.stringify(data).replace(/</g, "\\u003c");
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
@@ -120,18 +184,24 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         ${ibmPlexMono.variable}
         ${jetbrainsMono.variable}
         ${satoshi.variable}
-        ${googleSansCode.variable} 
-        h-full 
+        ${googleSansCode.variable}
+        h-full
         antialiased
         `}
     >
       <body className="min-h-full flex flex-col">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: toJsonLd(createPersonSchema()) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: toJsonLd(createWebsiteSchema()) }}
+        />
 
         <Navbar />
 
-        <main className="pt-34">
-          {children}
-        </main>
+        <main className="pt-34">{children}</main>
 
         <Footer />
       </body>
