@@ -18,6 +18,10 @@ const navData = {
             href: "/Dipraj_Ray_Resume.pdf"
         },
         {
+            name: "Projects",
+            href: "#projects"
+        },
+        {
             name: "Contact",
             href: "#contact"
         }
