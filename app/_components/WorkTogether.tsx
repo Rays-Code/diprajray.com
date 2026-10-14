@@ -24,7 +24,7 @@ const WorkTogether = () => {
           <span className="w-6 lg:w-10 h-[2px] bg-[#9196FF]"></span>
           <span>{workTogetherData.sectionLable}</span>
         </div>
-        <div className="flex flex-col font-bold text-3xl lg:text-5xl text-white font-space-grotesk">
+        <div className="flex flex-col font-bold text-2xl lg:text-5xl text-white font-space-grotesk">
           <div className="whitespace-normal sm:whitespace-nowrap">{workTogetherData.heading.line1}</div>
           <div className="whitespace-normal sm:whitespace-nowrap">{workTogetherData.heading.line2.part1} <span className="bg-gradient-to-r bg-clip-text text-transparent from-[#969AFF] to-[#000CFF]">{workTogetherData.heading.line2.part2}</span></div>
         </div>
