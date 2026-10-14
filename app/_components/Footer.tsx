@@ -1,7 +1,6 @@
 "use client";
 
 import Image from "next/image";
-import Link from "next/link"
 import footerData from "../_data/footer";
 
 const Footer = () => {
@@ -11,7 +10,7 @@ const Footer = () => {
       <div className="flex flex-col justify-center items-center bg-[#09090B] w-full min-h-70">
 
         {/* Navigate + connect */}
-        <div className="flex flex-col lg:flex-row justify-center lg:justify-between min-w-auto gap-10 lg:gap-0 lg:min-w-175 pt-14 lg:pt-0">
+        <div className="flex flex-col lg:flex-row justify-center lg:justify-between min-w-auto gap-10 lg:gap-0 lg:min-w-175 pt-14 lg:pt-0 px-7 lg:px-0">
           <div>
             <div className="text-sm font-semibold">{footerData?.navigate?.heading}</div>
             <div className="grid grid-cols-5 gap-4 pt-4 text-gray-400">

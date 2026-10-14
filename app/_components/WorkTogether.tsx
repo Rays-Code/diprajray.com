@@ -17,16 +17,16 @@ const GithubIcon = () => (
 
 const WorkTogether = () => {
   return (
-    <div className="flex justify-center pt-36 lg:pt-48 pl-0 lg:pl-28">
-      <div className="flex flex-col lg:flex-row items-center lg:justify-between gap-8 items-center min-w-100 px-6 lg:px-0 lg:min-w-260">
+    <div className="flex justify-center pt-36 lg:pt-48 pl-0 lg:pl-20">
+      <div className="flex flex-col lg:flex-row items-center lg:justify-between gap-8 items-center min-w-0 max-w-full px-6 lg:px-0 lg:min-w-0 lg:max-w-[1280px]">
       <div className="flex flex-col gap-4">
         <div className="text-[#9196FF] text-xs lg:text-sm font-medium font-hanken-grotesk flex gap-2 items-center">
           <span className="w-6 lg:w-10 h-[2px] bg-[#9196FF]"></span>
           <span>{workTogetherData.sectionLable}</span>
         </div>
         <div className="flex flex-col font-bold text-3xl lg:text-5xl text-white font-space-grotesk">
-          <div>{workTogetherData.heading.line1}</div>
-          <div>{workTogetherData.heading.line2.part1} <span className="bg-gradient-to-r bg-clip-text text-transparent from-[#969AFF] to-[#000CFF]">{workTogetherData.heading.line2.part2}</span></div>
+          <div className="whitespace-normal sm:whitespace-nowrap">{workTogetherData.heading.line1}</div>
+          <div className="whitespace-normal sm:whitespace-nowrap">{workTogetherData.heading.line2.part1} <span className="bg-gradient-to-r bg-clip-text text-transparent from-[#969AFF] to-[#000CFF]">{workTogetherData.heading.line2.part2}</span></div>
         </div>
         <div className="max-w-110 font-hanken-grotesk text-sm lg:text-lg text-white font-regular">{workTogetherData.description}</div>
         <div className="flex gap-4 pt-8">
@@ -46,7 +46,7 @@ const WorkTogether = () => {
       </div>
         <div>
           <Image
-            className="lg:pt-0 pt-4 md:w-[500px] md:w-[500px] lg:w-[600px] lg:h-[600px] object-contain"
+            className="lg:pt-0 pt-4 w-full max-w-[380px] xl:max-w-[520px] object-contain"
             src={workTogetherData.illustration.src}
             width={600}
             height={600}

@@ -6,8 +6,8 @@ const contactData = {
         base: "Together"
     },
     desc: {
-        line1: "Have a project in mind, a collaboration idea, or just want to say hello?",
-        line2: "Feel free to reach out — I'd love to hear from you!"
+        line1: "Have a project in mind? Let's connect!",
+        line2: "I'd love to hear from you!"
     },
 
     left: {

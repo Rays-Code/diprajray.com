@@ -88,7 +88,7 @@ const Hero = () => {
 
        {/* Horizontal divider - pt-14 */}
        <div className="pt-16 lg:pt-10"> 
-        <div className="h-[0.08px] w-[350px] lg:w-[700px] bg-theme-gray opacity-20"></div>
+        <div className="h-[0.08px] w-[350px] lg:w-[700px] max-w-[90vw] bg-theme-gray opacity-20"></div>
        </div>
 
       {/* Stats Section */}

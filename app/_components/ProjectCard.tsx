@@ -25,7 +25,7 @@ const ProjectCard = ({ proj }: { proj: Project }) => {
             <div key={proj?.heading?.text} className="relative flex flex-col lg:flex-row item-start lg:items-center justify-between lg:min-w-full min-w-0 max-w-200 min-h-0 lg:min-h-75 lg:pr-6 pb-0 lg:pb-12 backdrop-blur-lg bg-[#18181B] shadow-xl cursor-pointer rounded-lg overflow-hidden group">
 
                 {proj?.banner?.pos === "left" ? <div className="w-full h-full flex flex-col-reverse lg:flex-row justify-start lg:justify-between">
-                    <div className="max-lg:@container [--sw:min(29cqw,176px)] [--sh:min(64cqw,387px)] [--ty-side:min(6cqw,36px)] [--ty-mid:0px] [--sb:min(10cqw,60px)] [--sg:min(2.5cqw,15px)] [--wh:min(78cqw,471px)]">
+                    <div className="max-lg:@container [--sw:min(29cqw,176px)] [--sh:min(64cqw,387px)] [--ty-side:min(6cqw,36px)] [--ty-mid:0px] [--sb:min(10cqw,60px)] [--sg:min(1cqw,8px)] [--wh:min(78cqw,471px)]">
                         <div className={`relative w-full lg:h-full ${proj?.banner?.type === "image" ? "h-(--wh)" : "h-[17.5rem] md:h-[22.5rem]"}`}>
                             {proj?.banner?.type === "image" ? (
                                 <div className="pointer-events-none lg:pointer-events-auto absolute left-1/2 -translate-x-1/2 bottom-(--sb) w-max min-h-40 lg:w-auto lg:translate-x-0 lg:left-16 lg:-bottom-14 lg:min-w-156">
@@ -76,7 +76,7 @@ const ProjectCard = ({ proj }: { proj: Project }) => {
                     <div className="px-6 md:px-8 lg:px-0">
                         <div className="flex flex-col items-start lg:items-end">
                             {/* Heading */}
-                            <div className="pt-8 pb-2 flex justify-end max-w-220 lg:max-w-420">
+                            <div className="pt-8 pb-2 flex justify-end max-w-full lg:max-w-420">
                                 <div>
                                     <span className="text-3xl md:text-4xl lg:text-5xl font-bold font-satoshi tracking-[-1px] break-words">
                                         {proj?.heading?.text}
@@ -85,9 +85,9 @@ const ProjectCard = ({ proj }: { proj: Project }) => {
                             </div>
 
                             {/* Description */}
-                            <div className="pt-1 pb-4 max-w-screen lg:max-w-164">
+                            <div className="pt-1 pb-4 max-w-full lg:max-w-164">
                                 <div>
-                                    <p className="font-inter text-sm md:text-base text-gray-500 font-regular text-left lg:text-right">
+                                    <p className="font-inter text-sm md:text-base text-gray-500 font-regular text-left lg:text-right break-words">
                                         {proj?.description?.text}
                                     </p>
                                 </div>
@@ -142,7 +142,7 @@ const ProjectCard = ({ proj }: { proj: Project }) => {
                     <div className="px-6 md:px-8 lg:pl-8 lg:pr-0">
                         <div className="flex flex-col items-start">
                             {/* Heading */}
-                            <div className="pt-8 pb-2 flex justify-start max-w-420">
+                            <div className="pt-8 pb-2 flex justify-start max-w-full">
                                 <div>
                                     <span className="text-3xl md:text-4xl lg:text-5xl font-bold font-satoshi tracking-[-1px] break-words">
                                         {proj?.heading?.text}
@@ -151,9 +151,9 @@ const ProjectCard = ({ proj }: { proj: Project }) => {
                             </div>
 
                             {/* Description */}
-                            <div className="pt-1 pb-4 max-w-screen lg:max-w-140">
+                            <div className="pt-1 pb-4 max-w-full lg:max-w-140">
                                 <div>
-                                    <p className="font-inter text-sm md:text-base text-gray-500 font-regular text-left">
+                                    <p className="font-inter text-sm md:text-base text-gray-500 font-regular text-left break-words">
                                         {proj?.description?.text}
                                     </p>
                                 </div>
@@ -204,7 +204,7 @@ const ProjectCard = ({ proj }: { proj: Project }) => {
 
                         </div>
                     </div>
-                    <div className="max-lg:@container [--sw:min(29cqw,176px)] [--sh:min(64cqw,387px)] [--ty-side:min(6cqw,36px)] [--ty-mid:0px] [--sb:min(10cqw,60px)] [--sg:min(2.5cqw,15px)] [--wh:min(78cqw,471px)]">
+                    <div className="max-lg:@container [--sw:min(29cqw,176px)] [--sh:min(64cqw,387px)] [--ty-side:min(6cqw,36px)] [--ty-mid:0px] [--sb:min(10cqw,60px)] [--sg:min(1cqw,8px)] [--wh:min(78cqw,471px)]">
                         <div className={`relative w-full lg:h-full ${proj?.banner?.type === "image" ? "h-(--wh)" : "h-[17.5rem] md:h-[22.5rem]"}`}>
                             {proj?.banner?.type === "image" ? (
                                 <div className="pointer-events-none lg:pointer-events-auto absolute left-1/2 -translate-x-1/2 bottom-(--sb) w-max min-h-40 lg:w-auto lg:translate-x-0 lg:left-auto lg:right-0 lg:bottom-auto lg:-top-30 lg:min-w-130">

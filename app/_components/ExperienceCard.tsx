@@ -24,15 +24,15 @@ const ExperienceCard = ({ org }: { org: Organisation }) => {
     const [isOpen, setIsOpen] = useState(false);
 
     return (
-        <div className={`flex flex-col lg:flex-row justify-start items-start lg:items-center gap-2 lg:gap-12 w-[360px] md:w-[550px] lg:w-[1000px] py-3 pl-6 rounded-lg bg-[#18181B] backdrop-blur-lg shadow-xl overflow-hidden transition-all duration-600`}>
+        <div className={`flex flex-col sm:flex-row justify-start items-start lg:items-center gap-2 sm:gap-8 lg:gap-12 w-full max-w-[360px] md:max-w-[900px] lg:max-w-[1000px] py-3 px-6 lg:px-8 rounded-lg bg-[#18181B] backdrop-blur-lg shadow-xl overflow-hidden transition-all duration-600`}>
 
             {/* LEFT SIDE */}
-            <div className="relative h-18 w-18 lg:h-35 lg:w-35 rounded-full overflow-hidden mt-4 lg:mt-0">
+            <div className="relative h-18 w-18 sm:h-25 sm:w-25 lg:h-35 lg:w-35 rounded-full overflow-hidden mt-4 lg:mt-0 shrink-0">
                 {org?.logo && <Image src={org?.logo?.src} fill alt={org?.logo?.name} className="object-cover" />}
             </div>
 
             {/* RIGHT SIDE */}
-            <div className="w-[300px] lg:w-[730px] font-satoshi text-[#EDEDED] pt-4 lg:pt-6">
+            <div className="w-full max-w-[300px] md:max-w-[650px] lg:max-w-[730px] font-satoshi text-[#EDEDED] pt-4 lg:pt-6">
                 <div className={`flex items-center gap-3 font-bold ${org?.type === "education" ? "font-google-sans-code text-xl lg:text-2xl" : "font-satoshi text-3xl lg:text-4xl"}`}>
                     <span>{org?.name}</span>
                     {org?.current && <div className="relative bg-green-950 w-20 h-5 rounded-md flex items-center gap-2 px-2">
@@ -56,7 +56,7 @@ const ExperienceCard = ({ org }: { org: Organisation }) => {
                 </div>
 
                 <div className={`bg-[#27272A] transition-[max-height,padding] duration-700 ease-in-out
-                    ${isOpen ? "max-h-auto lg:max-h-[500px] p-6" : "max-h-0 p-0"} min-w-[320px] md:min-w-[500px] lg:min-w-[550px] rounded-md transition-all duration-700 ease-in-out`}>
+                    ${isOpen ? "max-h-auto lg:max-h-[500px] p-6" : "max-h-0 p-0"} w-full min-w-0 rounded-md transition-all duration-700 ease-in-out`}>
                     <div className={`transition-all duration-500 ease-out ${isOpen ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-3"}`}>
                         {org?.description?.map((line, idx) => {
                             return <div key={idx} className="flex gap-3 items-start mb-2">

@@ -36,7 +36,7 @@ const Experience = () => {
   const data = tab === "work" ? expData?.work?.organisations : expData?.education?.organisations;
 
   return (
-    <div id="experience" className="flex flex-col items-center gap-2 pt-30 lg:pt-44 font-inter px-24">
+    <div id="experience" className="flex flex-col items-center gap-2 pt-30 lg:pt-44 font-inter px-4 md:px-8">
       <div>
         <SectionHeading heading={expData.heading} />
       </div>

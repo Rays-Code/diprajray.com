@@ -64,7 +64,7 @@ const Contact = () => {
   };
 
   return (
-    <div id="contact" className="flex flex-col items-center pt-28 lg:pt-44 px-8 lg:px-0">
+    <div id="contact" className="flex flex-col items-center pt-28 lg:pt-44 px-6 lg:px-0">
 
       {/* TOP SECTION */}
       <div className="flex flex-col justify-center items-center gap-6">
@@ -79,7 +79,7 @@ const Contact = () => {
             <span> {contactData?.heading?.base}</span>
           </div>
         </div>
-        <div className="flex flex-col items-center justify-center max-w-[560px] text-center font-hanken-grotesk text-[10px] lg:text-lg font-normal">
+        <div className="flex flex-col items-center justify-center max-w-[560px] text-center font-hanken-grotesk text-xs lg:text-lg font-normal">
           <span>{contactData?.desc?.line1}</span>
           <span>{contactData?.desc?.line2}</span>
         </div>
@@ -153,7 +153,7 @@ const Contact = () => {
         </div>
 
        {/* RIGHT SECTION */}
-       <div className="border border-[#9196FF]/50 w-90 sm:w-130 h-auto lg:h-178 shadow-xl p-8">
+       <div className="border border-[#9196FF]/50 w-full max-w-90 sm:max-w-130 h-auto lg:h-178 shadow-xl p-8">
 
         <div className="flex flex-col gap-2">
           <div className="flex items-center gap-2">

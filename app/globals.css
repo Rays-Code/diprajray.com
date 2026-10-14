@@ -130,6 +130,7 @@ textarea:-webkit-autofill {
 
 html {
   scrollbar-width: none;
+  overflow-x: clip;
 }
 
 /* Chrome, Edge, Safari */
