@@ -64,36 +64,38 @@ const Contact = () => {
   };
 
   return (
-    <div id="contact" className="flex flex-col items-center pt-44">
+    <div id="contact" className="flex flex-col items-center pt-28 lg:pt-44 px-8 lg:px-0">
 
-      {/* LEFT SECTION */}
+      {/* TOP SECTION */}
       <div className="flex flex-col justify-center items-center gap-6">
         <div className="flex flex-col gap-5 items-center justify-center">
-          <div className="flex gap-2 font-hanken-grotesk text-[#9196FF] font-medium text-base items-center">
-             <span className="w-10 h-[2px] bg-[#9196FF]"></span>
+          <div className="flex gap-2 font-hanken-grotesk text-[#9196FF] font-medium text-sm lg:text-base items-center">
+             <span className="w-6 lg:w-10 h-[2px] bg-[#9196FF]"></span>
               <span>{contactData?.label}</span>
-             <span className="w-10 h-[2px] bg-[#9196FF]"></span>
+             <span className="w-6 lg:w-10 h-[2px] bg-[#9196FF]"></span>
           </div>
-          <div className="font-space-grotesk font-bold text-5xl">
+          <div className="font-space-grotesk font-bold text-3xl lg:text-5xl">
             <span className="text-[#C1C1C1]">{contactData?.heading?.highlighted}</span>
             <span> {contactData?.heading?.base}</span>
           </div>
         </div>
-        <div className="flex flex-col items-center justify-center max-w-140 font-hanken-grotesk text-lg font-regular">
+        <div className="flex flex-col items-center justify-center max-w-[560px] text-center font-hanken-grotesk text-[10px] lg:text-lg font-normal">
           <span>{contactData?.desc?.line1}</span>
           <span>{contactData?.desc?.line2}</span>
         </div>
       </div>
 
-      {/* LEFT SECTION */}
-      <div className="flex justify-between gap-25 pt-14">
-        <div className="relative flex flex-col">
-          <div className="text-[#9196FF] text-lg font-medium font-hanken-grotesk">{contactData?.left?.label}</div>
-          <div className="font-space-grotesk text-6xl font-bold flex flex-col justify-center pt-2">
+
+      <div className="flex lg:flex-row flex-col justify-between gap-25 pt-14">
+
+        {/* LEFT SECTION */}
+        <div className="relative flex flex-col pl-2 lg:pl-0">
+          <div className="text-[#9196FF] text-xs lg:text-lg font-medium font-hanken-grotesk">{contactData?.left?.label}</div>
+          <div className="font-space-grotesk text-3xl lg:text-6xl font-bold flex flex-col justify-center pt-2">
             <span>{contactData?.left?.heading?.line1}</span>
             <span>{contactData?.left?.heading?.line2?.base} <span className="bg-gradient-to-r from-[#969AFF] to-[#000CFF] bg-clip-text text-transparent">{contactData?.left?.heading?.line2?.highlighted}</span></span>
           </div>
-          <div className="max-w-110 font-hanken-grotesk text-lg font-regular text-gray-300 pt-10">
+          <div className="max-w-110 font-hanken-grotesk text-xs lg:text-lg font-regular text-gray-300 pt-6 lg:pt-10">
             {contactData?.left?.desc}
           </div>
           <div className="flex items-center gap-3 pt-7">
@@ -101,15 +103,17 @@ const Contact = () => {
               href={`mailto:${contactData?.left?.email}`}
               className="group flex items-center gap-4 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#9196FF]"
             >
-              <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-md border border-[#9196FF]/60 text-[#9196FF] transition-all duration-200 group-hover:-translate-x-0.5 group-hover:-translate-y-0.5 group-hover:border-[#9196FF] group-hover:bg-[#9196FF] group-hover:text-black group-hover:shadow-[3px_3px_0_0_#fff]">
-                <Mail size={20} strokeWidth={2.25} />
+              <div className="flex h-9 w-9 sm:h-10 sm:w-10 lg:h-11 lg:w-11 shrink-0 items-center justify-center rounded-md border border-[#9196FF]/60 text-[#9196FF] transition-all duration-200 group-hover:-translate-x-0.5 group-hover:-translate-y-0.5 group-hover:border-[#9196FF] group-hover:bg-[#9196FF] group-hover:text-black group-hover:shadow-[3px_3px_0_0_#fff]">
+                <Mail size={16} className="sm:hidden" strokeWidth={2.25} />
+                <Mail size={18} className="hidden sm:block lg:hidden" strokeWidth={2.25} />
+                <Mail size={20} className="hidden lg:block" strokeWidth={2.25} />
               </div>
 
               <div className="flex min-w-0 flex-col">
                 <span className="font-space-grotesk text-xs font-bold uppercase tracking-widest text-[#9196FF]">
                   Email
                 </span>
-                <span className="font-hanken-grotesk break-all text-lg text-white decoration-[#9196FF] decoration-2 underline-offset-4 group-hover:underline">
+                <span className="font-hanken-grotesk break-all text-sm lg:text-lg text-white decoration-[#9196FF] decoration-2 underline-offset-4 group-hover:underline">
                   {contactData?.left?.email}
                 </span>
               </div>
@@ -149,16 +153,23 @@ const Contact = () => {
         </div>
 
        {/* RIGHT SECTION */}
-       <div className="border border-[#9196FF]/50 w-130 h-178 shadow-xl p-8">
+       <div className="border border-[#9196FF]/50 w-90 sm:w-130 h-auto lg:h-178 shadow-xl p-8">
 
         <div className="flex flex-col gap-2">
           <div className="flex items-center gap-2">
-            <div>
-              <Image src={contactData?.right?.heading?.icon?.src} width={60} height={60} alt={contactData?.right?.heading?.icon?.name} quality={100}/>
-            </div>
-            <div className="font-space-grotesk text-4xl font-bold">{contactData?.right?.heading?.text}</div>
+              <div>
+                <Image
+                  src={contactData?.right?.heading?.icon?.src}
+                  width={60}
+                  height={60}
+                  alt={contactData?.right?.heading?.icon?.name}
+                  quality={100}
+                  className="w-12 h-12 sm:w-10 sm:h-10 lg:w-[60px] lg:h-[60px] object-contain"
+                />
+              </div>
+            <div className="font-space-grotesk text-2xl lg:text-4xl font-bold">{contactData?.right?.heading?.text}</div>
           </div>
-          <div className="font-hanken-grotesk font-regular text-sm">{contactData?.right?.desc}</div>
+          <div className="font-hanken-grotesk font-regular text-xs lg:text-sm">{contactData?.right?.desc}</div>
         </div>
 
         <div className="flex justify-center items-center pt-8">
@@ -169,7 +180,7 @@ const Contact = () => {
                {/* Contact Options */}
                <div className="col-span-2 flex flex-col gap-6">
                 <div>
-                  <span className="inline-block -rotate-2 bg-[#9196FF] px-3 py-1 text-3xl font-black font-inter uppercase tracking-wide text-black text-xs shadow-[3px_3px_0_0_#fff]">
+                  <span className="inline-block -rotate-2 bg-[#9196FF] px-3 py-1 text-xs font-black font-inter uppercase tracking-wide text-black shadow-[3px_3px_0_0_#fff]">
                     {contactData?.right?.form?.field1?.heading}
                   </span>
                 </div>
@@ -179,7 +190,7 @@ const Contact = () => {
                     <input name="topic" type="hidden" value={selectedTopic} />
                     {contactData?.right?.form?.field1?.contactOptions?.map((option, idx) => {
                       return <button key={idx} type="button" onClick={() => setSelectedTopic(option)} 
-                      className={`relative px-4 py-2 border-2 border-[#9196FF]/30 uppercase font-inter text-xs cursor-pointer transition-all duration-300 
+                      className={`relative px-3 py-1.5 lg:px-4 lg:py-2 border-2 border-[#9196FF]/30 uppercase font-inter text-xs cursor-pointer transition-all duration-300 
                         ${selectedTopic === option? "bg-[#D0D2FF] font-black text-black shadow-[3px_3px_0_0_#fff] border-r-2 border-b-3 border-black -rotate-1": "font-bold bg-transparent"}`}
                       >
                         {option}
@@ -195,9 +206,9 @@ const Contact = () => {
                </div>
 
               {/* User */}
-              <div className="h-14 flex flex-col gap-4 font-hanken-grotesk text-lg">
+              <div className="h-14 flex flex-col gap-4 font-hanken-grotesk text-normal lg:text-lg">
                 <div>
-                  <span className="inline-block -rotate-2 bg-[#9196FF] px-3 py-1 text-3xl font-black font-inter uppercase tracking-wide text-black text-xs shadow-[3px_3px_0_0_#fff]">
+                  <span className="inline-block -rotate-2 bg-[#9196FF] px-2.5 lg:px-3 py-0.5 lg:py-1 text-3xl font-black font-inter uppercase tracking-wide text-black text-xs shadow-[3px_3px_0_0_#fff]">
                     {contactData?.right?.form?.field2?.heading}
                   </span>
                 </div>
@@ -205,9 +216,9 @@ const Contact = () => {
               </div>
 
               {/* Email */}
-              <div className="h-14 flex flex-col gap-4 font-hanken-grotesk text-lg">
+              <div className="h-14 flex flex-col gap-4 font-hanken-grotesk text-normal lg:text-lg">
                 <div>
-                  <span className="inline-block -rotate-2 bg-[#9196FF] px-3 py-1 text-3xl font-black font-inter uppercase tracking-wide text-black text-xs shadow-[3px_3px_0_0_#fff]">
+                  <span className="inline-block -rotate-2 bg-[#9196FF] px-2.5 lg:px-3 py-0.5 lg:py-1 text-3xl font-black font-inter uppercase tracking-wide text-black text-xs shadow-[3px_3px_0_0_#fff]">
                     {contactData?.right?.form?.field3?.heading}
                   </span>
                 </div>
@@ -217,11 +228,11 @@ const Contact = () => {
               {/* Message */}
               <div className="col-span-2 h-35 w-full rounded-lg flex flex-col gap-4 font-hanken-grotesk pt-8 h-full">
                 <div>
-                  <span className="inline-block -rotate-2 bg-[#9196FF] px-3 py-1 text-3xl font-black font-inter uppercase tracking-wide text-black text-xs shadow-[3px_3px_0_0_#fff]">
+                  <span className="inline-block -rotate-2 bg-[#9196FF] px-2.5 lg:px-3 py-0.5 lg:py-1 text-3xl font-black font-inter uppercase tracking-wide text-black text-xs shadow-[3px_3px_0_0_#fff]">
                     {contactData?.right?.form?.field4?.heading}
                   </span>
                 </div>
-                <textarea name="from_message" className="w-full min-h-35 outline-none resize-none bg-transparent font-black text-lg placeholder:text-[#696969] placeholder:font-black border-3 border-gray-300/10 p-3 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden" placeholder={contactData?.right?.form?.field4?.placeholder} required/>
+                <textarea name="from_message" className="w-full min-h-35 outline-none resize-none bg-transparent font-black text-normal lg:text-lg placeholder:text-[#696969] placeholder:font-black border-3 border-gray-300/10 p-3 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden" placeholder={contactData?.right?.form?.field4?.placeholder} required/>
               </div>
 
 
@@ -325,9 +336,16 @@ const Contact = () => {
               </div>
               
               {/* Submit */}
-              <button type="submit" disabled={status === "sending"} className="col-span-2 bg-[#9196FF] shadow-[6px_6px_0_0_#262626] py-3 text-center flex gap-3 justify-center items-center hover:scale-102 transition-all duration-300 cursor-pointer group mt-1">
-                <span className="font-hanken-grotesk font-black text-black text-xl italic">{status === "sending"? "SENDING...": contactData?.right?.form?.submitBtn?.text }</span>
-                <Image src={contactData?.right?.form?.submitBtn?.icon?.src} width={28} height={28} alt={contactData?.right?.form?.submitBtn?.icon?.name} unoptimized className="opacity-70 group-hover:-translate-y-1 group-hover:translate-x-2 transition-all duration-200"/>
+              <button type="submit" disabled={status === "sending"} className="col-span-2 bg-[#9196FF] shadow-[6px_6px_0_0_#262626]  py-2.5 lg:py-3 text-center flex gap-3 justify-center items-center hover:scale-102 transition-all duration-300 cursor-pointer group mt-1">
+                <span className="font-hanken-grotesk font-black text-black text-lg lg:text-xl italic">{status === "sending"? "SENDING...": contactData?.right?.form?.submitBtn?.text }</span>
+                <Image
+                  src={contactData?.right?.form?.submitBtn?.icon?.src}
+                  width={28}
+                  height={28}
+                  alt={contactData?.right?.form?.submitBtn?.icon?.name}
+                  unoptimized
+                  className="w-[24px] h-[24px] opacity-70 group-hover:-translate-y-1 group-hover:translate-x-2 transition-all duration-200"
+                />
               </button>
 
             </form>

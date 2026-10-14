@@ -36,16 +36,16 @@ const Experience = () => {
   const data = tab === "work" ? expData?.work?.organisations : expData?.education?.organisations;
 
   return (
-    <div id="experience" className="flex flex-col items-center gap-2 pt-44 font-inter px-24">
+    <div id="experience" className="flex flex-col items-center gap-2 pt-30 lg:pt-44 font-inter px-24">
       <div>
         <SectionHeading heading={expData.heading} />
       </div>
 
       {/* Experience Tabs */}
-      <div className="pt-16">
-        <div className="flex justify-between items-center bg-[#18181B] px-1 py-1 rounded-full text-md font-semibold border border-[#3F3F46]">
+      <div className="pt-12 lg:pt-16">
+        <div className="flex justify-between items-center bg-[#18181B] px-1 py-1 rounded-full text-xs lg:text-base font-semibold border border-[#3F3F46]">
           <div
-            className={`flex-1 text-center cursor-pointer px-11 py-1 rounded-full transition-all duration-300 ${tab === "work"
+            className={`flex-1 text-center cursor-pointer px-8 lg:px-11 py-1 rounded-full transition-all duration-300 ${tab === "work"
                 ? "bg-[#303036] text-white border border-[#52525B] shadow-[inset_0_1px_0_rgba(255,255,255,0.06)]"
                 : "text-[#A1A1AA] hover:text-[#E4E4E7]"
               }`}
@@ -55,7 +55,7 @@ const Experience = () => {
           </div>
 
           <div
-            className={`flex-1 text-center cursor-pointer px-11 py-1 rounded-full transition-all duration-300 ${tab === "education"
+            className={`flex-1 text-center cursor-pointer px-8 lg:px-11 py-1 rounded-full transition-all duration-300 ${tab === "education"
                 ? "bg-[#303036] text-white border border-[#52525B] shadow-[inset_0_1px_0_rgba(255,255,255,0.06)]"
                 : "text-[#A1A1AA] hover:text-[#E4E4E7]"
               }`}

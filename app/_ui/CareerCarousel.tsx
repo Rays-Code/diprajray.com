@@ -23,12 +23,15 @@ const CareerCarousel = () => {
                 italic
                 font-cormorant-upright
                 font-semibold
-                text-4xl
+                text-2xl
+                lg:text-4xl
                 bg-theme-blue
                 text-white
                 rounded-full
-                px-6
-                pb-1
+                px-5
+                lg:px-6
+                lg:pb-1
+                pb-0
             "
             transition={{
                 layout: {

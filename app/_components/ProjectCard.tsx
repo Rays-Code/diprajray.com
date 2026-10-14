@@ -22,23 +22,23 @@ const GithubIcon = ({active}: {active: boolean}) => (
 const ProjectCard = ({ proj }: { proj: Project }) => {
     return (
         <>
-            <div key={proj?.heading?.text} className="relative flex items-center justify-between min-w-full min-h-75 pr-6 pb-12 backdrop-blur-lg bg-[#18181B] shadow-xl cursor-pointer rounded-lg overflow-hidden group">
+            <div key={proj?.heading?.text} className="relative flex flex-col lg:flex-row item-start lg:items-center justify-between lg:min-w-full min-w-0 max-w-200 min-h-0 lg:min-h-75 lg:pr-6 pb-0 lg:pb-12 backdrop-blur-lg bg-[#18181B] shadow-xl cursor-pointer rounded-lg overflow-hidden group">
 
-                {proj?.banner?.pos === "left" ? <div className="w-full h-full flex justify-between">
-                    <div>
-                        <div className="relative h-full">
+                {proj?.banner?.pos === "left" ? <div className="w-full h-full flex flex-col-reverse lg:flex-row justify-start lg:justify-between">
+                    <div className="max-lg:@container [--sw:min(29cqw,176px)] [--sh:min(64cqw,387px)] [--ty-side:min(6cqw,36px)] [--ty-mid:0px] [--sb:min(10cqw,60px)] [--sg:min(2.5cqw,15px)] [--wh:min(78cqw,471px)]">
+                        <div className={`relative w-full lg:h-full ${proj?.banner?.type === "image" ? "h-(--wh)" : "h-[17.5rem] md:h-[22.5rem]"}`}>
                             {proj?.banner?.type === "image" ? (
-                                <div className="absolute left-16 -bottom-14 min-w-156 min-h-40">
+                                <div className="pointer-events-none lg:pointer-events-auto absolute left-1/2 -translate-x-1/2 bottom-(--sb) w-max min-h-40 lg:w-auto lg:translate-x-0 lg:left-16 lg:-bottom-14 lg:min-w-156">
 
-                                    <div className="flex justify-start items-end gap-3 max-w-125">
+                                    <div className="flex justify-center lg:justify-start items-end gap-(--sg) lg:gap-3 max-w-none lg:max-w-125">
                                         {proj?.banner?.screens?.map((screen) => (
                                             <div
                                                 key={screen?.name}
-                                                className={`relative w-38 h-78 overflow-hidden rounded-t-lg ${screen?.pos === "left"
-                                                    ? "-rotate-4 translate-y-46 group-hover:-rotate-7 group-hover:translate-y-42 group-hover:scale-102 transition-all duration-400"
+                                                className={`relative shrink-0 lg:shrink w-(--sw) h-(--sh) lg:w-38 lg:h-78 overflow-hidden rounded-t-lg ${screen?.pos === "left"
+                                                    ? "-rotate-4 translate-y-(--ty-side) lg:translate-y-46 group-hover:-rotate-7 lg:group-hover:translate-y-42 group-hover:scale-102 transition-all duration-400"
                                                     : screen?.pos === "right"
-                                                        ? "rotate-7 translate-y-46 group-hover:rotate-9 group-hover:translate-y-42 group-hover:scale-102 transition-all duration-400"
-                                                        : "rotate-0 translate-y-38 group-hover:translate-y-34 group-hover:scale-102 transition-all duration-400"
+                                                        ? "rotate-7 translate-y-(--ty-side) lg:translate-y-46 group-hover:rotate-9 lg:group-hover:translate-y-42 group-hover:scale-102 transition-all duration-400"
+                                                        : "rotate-0 translate-y-(--ty-mid) lg:translate-y-38 lg:group-hover:translate-y-34 group-hover:scale-102 transition-all duration-400"
                                                     }`}
                                             >
                                                 <Image
@@ -55,37 +55,39 @@ const ProjectCard = ({ proj }: { proj: Project }) => {
 
                                 </div>
                             ) : (
-                                <div style={{ width: proj?.banner?.videoWidth }} className={`absolute -bottom-20 left-16 h-77 overflow-hidden rounded-t-xl -rotate-2 group-hover:-rotate-4 group-hover:-bottom-18 group-hover:scale-102 transition-all duration-500`}>
+                                <div
+                                style={{ "--video-width": proj?.banner?.videoWidth } as React.CSSProperties}
+                                className="absolute top-4 left-1/2 -translate-x-1/2 h-60 md:h-80 w-[85%] overflow-hidden rounded-xl lg:rounded-t-xl -rotate-2 transition-all duration-500 group-hover:-rotate-4 group-hover:-bottom-18 group-hover:scale-102 lg:top-auto lg:translate-x-0 lg:-bottom-20 lg:left-16 lg:h-77 lg:w-[var(--video-width)]">
                                     <video
-                                        src={proj.banner?.video}
-                                        autoPlay
-                                        muted
-                                        loop
-                                        playsInline
-                                        className="absolute inset-0 w-full h-full object-cover"
+                                     src={proj.banner?.video}
+                                     autoPlay
+                                     muted
+                                     loop
+                                     playsInline
+                                     className="absolute inset-0 h-full w-full object-cover"
                                     />
-                                </div>
+                               </div>
                             )}
 
                         </div>
                         <div>
                         </div>
                     </div>
-                    <div>
-                        <div className="flex flex-col items-end">
+                    <div className="px-6 md:px-8 lg:px-0">
+                        <div className="flex flex-col items-start lg:items-end">
                             {/* Heading */}
-                            <div className="pt-8 pb-2 flex justify-end max-w-420">
+                            <div className="pt-8 pb-2 flex justify-end max-w-220 lg:max-w-420">
                                 <div>
-                                    <span className="text-5xl font-bold font-satoshi tracking-[-1px] break-words">
+                                    <span className="text-3xl md:text-4xl lg:text-5xl font-bold font-satoshi tracking-[-1px] break-words">
                                         {proj?.heading?.text}
                                     </span>
                                 </div>
                             </div>
 
                             {/* Description */}
-                            <div className="pt-1 pb-4 max-w-164">
+                            <div className="pt-1 pb-4 max-w-screen lg:max-w-164">
                                 <div>
-                                    <p className="font-inter text-md text-gray-500 font-regular text-right">
+                                    <p className="font-inter text-sm md:text-base text-gray-500 font-regular text-left lg:text-right">
                                         {proj?.description?.text}
                                     </p>
                                 </div>
@@ -94,7 +96,7 @@ const ProjectCard = ({ proj }: { proj: Project }) => {
 
 
                         {/* Tech Used */}
-                        <div className="flex justify-end flex-wrap gap-2">
+                        <div className="flex justify-start lg:justify-end flex-wrap gap-2">
                             {proj.technologies?.map((tech, idx) => {
                                 return <div key={idx}>
                                     <span>
@@ -106,10 +108,10 @@ const ProjectCard = ({ proj }: { proj: Project }) => {
                         </div>
 
                         {/* Live site & Github buttons */}
-                        <div className="flex items-center justify-end gap-4 pt-3 pb-6 text-white">
+                        <div className="flex items-center justify-start lg:justify-end gap-4 pt-3 pb-6 text-white">
 
                             {/* Live site */}
-                            <a href={proj?.live?.url} target="_blank" className={`flex justify-center items-center gap-2 px-4 py-2 rounded-lg ${proj?.live?.color} font-normal font-google-sans-code text-white text-md cursor-pointer shadow-2xl hover:scale-102 backdrop-blur-md transition-all duration-100`}>
+                            <a href={proj?.live?.url} target="_blank" className={`flex justify-center items-center gap-2 px-3 md:px-4 py-2 rounded-lg ${proj?.live?.color} font-normal font-google-sans-code text-white text-sm md:text-base cursor-pointer shadow-2xl hover:scale-102 backdrop-blur-md transition-all duration-100`}>
                                 <div>
                                     <Globe size={16} className="opacity-80" />
                                 </div>
@@ -121,7 +123,7 @@ const ProjectCard = ({ proj }: { proj: Project }) => {
                                 href={proj?.githubUrl || undefined}
                                 target={proj?.githubUrl ? "_blank" : undefined}
                                 rel={proj?.githubUrl ? "noopener noreferrer" : undefined}
-                                className={`flex gap-2 justify-center items-center border border-gray-700 rounded-lg py-2 px-4 text-md font-normal font-google-sans-code shadow-2xl backdrop-blur-md transition-all duration-100
+                                className={`flex gap-2 justify-center items-center border border-gray-700 rounded-lg py-2 px-3 md:px-4 text-sm md:text-base font-normal font-google-sans-code shadow-2xl backdrop-blur-md transition-all duration-100
                                 ${proj?.githubUrl
                                         ? "cursor-pointer hover:scale-102 hover:bg-gray-900 hover:text-white"
                                         : "cursor-not-allowed pointer-events-none"
@@ -136,22 +138,22 @@ const ProjectCard = ({ proj }: { proj: Project }) => {
 
                         </div>
                     </div>
-                </div> : <div className="w-full h-full flex justify-between">
-                    <div className="pl-8">
+                </div> : <div className="w-full h-full flex flex-col lg:flex-row justify-start lg:justify-between">
+                    <div className="px-6 md:px-8 lg:pl-8 lg:pr-0">
                         <div className="flex flex-col items-start">
                             {/* Heading */}
                             <div className="pt-8 pb-2 flex justify-start max-w-420">
                                 <div>
-                                    <span className="text-5xl font-bold font-satoshi tracking-[-1px] break-words">
+                                    <span className="text-3xl md:text-4xl lg:text-5xl font-bold font-satoshi tracking-[-1px] break-words">
                                         {proj?.heading?.text}
                                     </span>
                                 </div>
                             </div>
 
                             {/* Description */}
-                            <div className="pt-1 pb-4 max-w-140">
+                            <div className="pt-1 pb-4 max-w-screen lg:max-w-140">
                                 <div>
-                                    <p className="font-inter text-md text-gray-500 font-regular text-left">
+                                    <p className="font-inter text-sm md:text-base text-gray-500 font-regular text-left">
                                         {proj?.description?.text}
                                     </p>
                                 </div>
@@ -175,7 +177,7 @@ const ProjectCard = ({ proj }: { proj: Project }) => {
                         <div className="flex items-center justify-start gap-4 pt-3 pb-6 text-white">
 
                             {/* Live site */}
-                            <a href={proj?.live?.url} target="_blank" className={`flex justify-center items-center gap-2 px-4 py-2 rounded-lg ${proj.live.color} font-normal font-google-sans-code text-white text-md cursor-pointer shadow-2xl hover:scale-102 backdrop-blur-md transition-all duration-100`}>
+                            <a href={proj?.live?.url} target="_blank" className={`flex justify-center items-center gap-2 px-3 md:px-4 py-2 rounded-lg ${proj.live.color} font-normal font-google-sans-code text-white text-sm md:text-base cursor-pointer shadow-2xl hover:scale-102 backdrop-blur-md transition-all duration-100`}>
                                 <div>
                                     <Globe size={16} className="opacity-80" />
                                 </div>
@@ -187,7 +189,7 @@ const ProjectCard = ({ proj }: { proj: Project }) => {
                                 href={proj?.githubUrl || undefined}
                                 target={proj?.githubUrl ? "_blank" : undefined}
                                 rel={proj?.githubUrl ? "noopener noreferrer" : undefined}
-                                className={`flex gap-2 justify-center items-center border border-gray-700 rounded-lg py-2 px-4 text-md font-normal font-google-sans-code shadow-2xl backdrop-blur-md transition-all duration-100
+                                className={`flex gap-2 justify-center items-center border border-gray-700 rounded-lg py-2 px-3 md:px-4 text-sm md:text-base font-normal font-google-sans-code shadow-2xl backdrop-blur-md transition-all duration-100
                                 ${proj?.githubUrl
                                         ? "cursor-pointer hover:scale-102 hover:bg-gray-900 hover:text-white"
                                         : "cursor-not-allowed pointer-events-none"
@@ -202,20 +204,20 @@ const ProjectCard = ({ proj }: { proj: Project }) => {
 
                         </div>
                     </div>
-                    <div>
-                        <div className="relative h-full">
+                    <div className="max-lg:@container [--sw:min(29cqw,176px)] [--sh:min(64cqw,387px)] [--ty-side:min(6cqw,36px)] [--ty-mid:0px] [--sb:min(10cqw,60px)] [--sg:min(2.5cqw,15px)] [--wh:min(78cqw,471px)]">
+                        <div className={`relative w-full lg:h-full ${proj?.banner?.type === "image" ? "h-(--wh)" : "h-[17.5rem] md:h-[22.5rem]"}`}>
                             {proj?.banner?.type === "image" ? (
-                                <div className="absolute right-0 -top-30 min-w-130 min-h-40">
+                                <div className="pointer-events-none lg:pointer-events-auto absolute left-1/2 -translate-x-1/2 bottom-(--sb) w-max min-h-40 lg:w-auto lg:translate-x-0 lg:left-auto lg:right-0 lg:bottom-auto lg:-top-30 lg:min-w-130">
 
-                                    <div className="flex justify-start items-end gap-3 max-w-125">
+                                    <div className="flex justify-center lg:justify-start items-end gap-(--sg) lg:gap-3 max-w-none lg:max-w-125">
                                         {proj?.banner?.screens?.map((screen) => (
                                             <div
                                                 key={screen?.name}
-                                                className={`relative w-38 h-82 overflow-hidden rounded-t-lg ${screen?.pos === "left"
-                                                    ? "-rotate-4 translate-y-46 group-hover:-rotate-7 group-hover:translate-y-42 group-hover:scale-102 transition-all duration-400"
+                                                className={`relative shrink-0 lg:shrink w-(--sw) h-(--sh) lg:w-38 lg:h-82 overflow-hidden rounded-lg lg:rounded-t-lg ${screen?.pos === "left"
+                                                    ? "-rotate-4 translate-y-(--ty-side) lg:translate-y-46 group-hover:-rotate-7 lg:group-hover:translate-y-42 group-hover:scale-102 transition-all duration-400"
                                                     : screen?.pos === "right"
-                                                        ? "rotate-7 translate-y-46 group-hover:rotate-9 group-hover:translate-y-42 group-hover:scale-102 transition-all duration-400"
-                                                        : "rotate-0 translate-y-38 group-hover:translate-y-34 group-hover:scale-102 transition-all duration-400"
+                                                        ? "rotate-7 translate-y-(--ty-side) lg:translate-y-46 group-hover:rotate-9 lg:group-hover:translate-y-42 group-hover:scale-102 transition-all duration-400"
+                                                        : "rotate-0 translate-y-(--ty-mid) lg:translate-y-38 lg:group-hover:translate-y-34 group-hover:scale-102 transition-all duration-400"
                                                     }`}
                                             >
                                                 <Image
@@ -232,7 +234,7 @@ const ProjectCard = ({ proj }: { proj: Project }) => {
 
                                 </div>
                             ) : (
-                                <div className="absolute -bottom-20 left-16 w-95 h-77 overflow-hidden rounded-t-xl -rotate-2 group-hover:-rotate-4 group-hover:-bottom-18 group-hover:scale-102 transition-all duration-500">
+                                <div className="absolute top-4 left-1/2 -translate-x-1/2 h-60 md:h-80 w-[85%] overflow-hidden rounded-xl lg:rounded-t-xl rotate-2 group-hover:rotate-4 group-hover:-bottom-16 group-hover:scale-102 transition-all duration-500 lg:top-auto lg:left-auto lg:translate-x-0 lg:right-12 lg:-bottom-18 lg:w-95 lg:h-77">
                                     <video
                                         src={proj?.banner?.video}
                                         autoPlay
@@ -253,4 +255,4 @@ const ProjectCard = ({ proj }: { proj: Project }) => {
     )
 }
 
-export default ProjectCard
+export default ProjectCard;

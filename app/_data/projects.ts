@@ -14,52 +14,6 @@ const projectData: ProjectData = {
     projects: [
         {
             banner: {
-                type: "video", // "image" or video
-                pos: "left",
-                video: "/projects/swadhyaya-samsthanam/swadhyaya-walkthrough.mp4",
-                videoWidth: "380px",
-                Logo: {
-                    name: "",
-                    src: ""
-                }
-            },
-            technologies: [
-                {
-                    name: "Next.js",
-                    src: "/dev-icons/nextjs-icon.svg"
-                },
-                {
-                    name: "TypeScript",
-                    src: "/dev-icons/typescript-icon.svg"
-                },
-                {
-                    name: "Tailwind CSS",
-                    src: "/dev-icons/tailwind-icon.svg"
-                },
-                {
-                    name: "Prisma",
-                    src: "/dev-icons/prisma.svg"
-                },
-                {
-                    name: "Cloudflare R2",
-                    src: "/dev-icons/cloudflare-icon.svg"
-                }
-            ],
-            heading: {
-                text: "Sri Swadhyaya Samsthanam"
-            },
-            description: {
-                text: `A scholarly multilingual platform for exploring Indian philosophy, Vedanta research, teachings, publications, and events.`,
-            },
-            live: {
-                url: "https://www.swadhyayasamsthanam.org/",
-                color: "bg-orange-400"
-            },
-            githubUrl: ""
-        },
-
-        {
-            banner: {
                 type: "image", // "image" or video
                 pos: "right",
                 screens: [{   // max 3, optional
@@ -248,24 +202,19 @@ const projectData: ProjectData = {
 
         {
             banner: {
-                type: "video",
+                type: "video", // "image" or video
                 pos: "left",
-                video: "/projects/padam/padam-walkthrough.mp4",
+                video: "/projects/swadhyaya-samsthanam/swadhyaya-walkthrough.mp4",
                 videoWidth: "380px",
                 Logo: {
-                    name: "Padam Dance Academy Logo",
-                    src: "/projects/padam/padam.png"
+                    name: "",
+                    src: ""
                 }
             },
-
             technologies: [
                 {
                     name: "Next.js",
                     src: "/dev-icons/nextjs-icon.svg"
-                },
-                {
-                    name: "React",
-                    src: "/dev-icons/react.svg"
                 },
                 {
                     name: "TypeScript",
@@ -276,28 +225,24 @@ const projectData: ProjectData = {
                     src: "/dev-icons/tailwind-icon.svg"
                 },
                 {
-                    name: "EmailJS",
-                    src: "/dev-icons/emailjs.svg"
+                    name: "Prisma",
+                    src: "/dev-icons/prisma.svg"
                 },
                 {
-                    name: "WhatsApp API",
-                    src: "/dev-icons/whatsapp-icon.svg"
+                    name: "Cloudflare R2",
+                    src: "/dev-icons/cloudflare-icon.svg"
                 }
             ],
-
             heading: {
-                text: "Padam Dance Academy"
+                text: "Sri Swadhyaya Samsthanam"
             },
-
             description: {
-                text: `Padam is a modern dance academy website showcasing classes, instructors, programs, and the academy’s artistic identity through an engaging digital experience.`
+                text: `A scholarly multilingual platform for exploring Indian philosophy, Vedanta research, teachings, publications, and events.`,
             },
-
             live: {
-                url: "https://www.padamdanceacademy.in/",
-                color: "bg-[#C9A227]"
+                url: "https://www.swadhyayasamsthanam.org/",
+                color: "bg-orange-400"
             },
-
             githubUrl: ""
         },
 
@@ -428,6 +373,61 @@ const projectData: ProjectData = {
             live: {
                 url: "https://www.paruienterprises.in/",
                 color: "bg-[#D99143]"
+            },
+
+            githubUrl: ""
+        },
+
+        {
+            banner: {
+                type: "video",
+                pos: "right",
+                video: "/projects/padam/padam-walkthrough.mp4",
+                videoWidth: "380px",
+                Logo: {
+                    name: "Padam Dance Academy Logo",
+                    src: "/projects/padam/padam.png"
+                }
+            },
+
+            technologies: [
+                {
+                    name: "Next.js",
+                    src: "/dev-icons/nextjs-icon.svg"
+                },
+                {
+                    name: "React",
+                    src: "/dev-icons/react.svg"
+                },
+                {
+                    name: "TypeScript",
+                    src: "/dev-icons/typescript-icon.svg"
+                },
+                {
+                    name: "Tailwind CSS",
+                    src: "/dev-icons/tailwind-icon.svg"
+                },
+                {
+                    name: "EmailJS",
+                    src: "/dev-icons/emailjs.svg"
+                },
+                {
+                    name: "WhatsApp API",
+                    src: "/dev-icons/whatsapp-icon.svg"
+                }
+            ],
+
+            heading: {
+                text: "Padam Dance Academy"
+            },
+
+            description: {
+                text: `Padam is a modern dance academy website showcasing classes, instructors, programs, and the academy’s artistic identity through an engaging digital experience.`
+            },
+
+            live: {
+                url: "https://www.padamdanceacademy.in/",
+                color: "bg-[#C9A227]"
             },
 
             githubUrl: ""

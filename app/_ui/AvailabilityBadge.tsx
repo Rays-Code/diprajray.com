@@ -10,7 +10,7 @@ interface AvailabilityBadge {
 
 const AvailabilityBadge = ({ label, country, src, alt }: AvailabilityBadge) => {
   return (
-    <div className="flex items-center gap-4 text-[10px] font-semibold font-inter border-[0.1px] border-white py-[6px] px-3 rounded-full mb-4">
+    <div className="flex items-center gap-4 text-[10px] font-semibold font-inter border-[0.1px] border-gray-600 py-[4px] lg:py-[6px] px-2 lg:px-3 rounded-full mb-4 shadow-3xl">
 
       {/* Green pulse */}
       <div className="relative">
@@ -19,8 +19,8 @@ const AvailabilityBadge = ({ label, country, src, alt }: AvailabilityBadge) => {
       </div>
 
       {/* Availability, location & time */}
-      <div className="flex items-center gap-3">
-        <div className="uppercase">{label}</div>
+      <div className="flex items-center gap-3 text-gray-300">
+        <div className="uppercase text-[9px] lg:text-[10px]">{label}</div>
 
         <div className="h-[15px] w-[0.4px] bg-theme-gray opacity-30"></div>
 
@@ -30,7 +30,7 @@ const AvailabilityBadge = ({ label, country, src, alt }: AvailabilityBadge) => {
               <div>
                 <Image className="rounded-xs" src={src} width={14} height={14} alt={alt} />
               </div>
-              <div>{country}</div>
+              <div className="text-[9.5px] lg:text-[11px]">{country}</div>
             </div>
             <div className="bg-theme-gray w-[3px] h-[3px] rounded-full"></div>
           </div>

@@ -66,7 +66,10 @@ const Testimonials = () => {
             transition={{ duration: 1, ease: "easeOut" }}
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}
-            className="absolute left-[calc(50%+405px)] top-[36%] flex flex-col items-center justify-center"
+            className="absolute top-full left-1/2 -translate-x-1/2
+           mt-4 flex flex-col items-center justify-center
+           lg:top-[36%] lg:left-[calc(50%+405px)]
+           lg:mt-0 lg:translate-x-0 pt-14 lg:pt-0"
         >
             {/* Heading */}
             <div className="flex items-center justify-center">
@@ -76,17 +79,18 @@ const Testimonials = () => {
                         width={50}
                         height={50}
                         alt={testimonialData.icon.label}
+                        className="w-10 h-10 md:w-[50px] md:h-[50px]"
                     />
                 </div>
 
                 <div className="-rotate-3 flex gap-1">
-                    <div className="flex gap-3 font-rancho text-3xl font-regular">
+                    <div className="flex gap-3 font-rancho text-2xl lg:text-3xl font-regular">
                         {testimonialData.heading.words.map((word) => (
                             <span key={word}>{word}</span>
                         ))}
                     </div>
 
-                    <div className="relative inline-block font-rancho text-3xl font-regular">
+                    <div className="relative inline-block font-rancho text-2xl lg:text-3xl font-regular">
                         {testimonialData.heading.highlightedText}
 
                         <svg

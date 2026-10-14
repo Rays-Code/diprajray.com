@@ -33,12 +33,12 @@ const cardVariants: Variants = {
 const Projects = () => {
   return (
     <div id="projects" className="flex flex-col justify-center items-center min-w-full">
-      <div>
+      <div className="pt-62 sm:pt-12 lg:pt-0">
         <SectionHeading heading={projectData.heading}/>
       </div>
 
-      <div className="flex justify-center items-center pt-26 min-w-full">
-        <motion.div variants={containerVariants} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.2 }} className="min-w-[1200px] grid grid-cols-1 gap-16">
+      <div className="flex justify-center items-center pt-20 lg:pt-26 min-w-full">
+        <motion.div variants={containerVariants} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.2 }} className="min-w-screen lg:min-w-[1200px] grid grid-cols-1 gap-10 lg:gap-16 px-5 lg:px-0">
          {projectData?.projects?.map((proj, idx) => (
             <motion.div
               key={idx}

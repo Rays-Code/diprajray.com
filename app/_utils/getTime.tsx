@@ -22,5 +22,5 @@ export default function IndianClock() {
     return () => clearInterval(id);
   }, []);
 
-  return <div>{time}</div>;
+  return <div className="text-[9px] lg:text-[10px]">{time}</div>;
 }
