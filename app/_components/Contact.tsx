@@ -185,12 +185,12 @@ const Contact = () => {
                   </span>
                 </div>
                 <div>
-                  <div className="flex flex-wrap gap-4">
+                  <div className="flex flex-wrap gap-3 lg:gap-4">
 
                     <input name="topic" type="hidden" value={selectedTopic} />
                     {contactData?.right?.form?.field1?.contactOptions?.map((option, idx) => {
                       return <button key={idx} type="button" onClick={() => setSelectedTopic(option)} 
-                      className={`relative px-3 py-1.5 lg:px-4 lg:py-2 border-2 border-[#9196FF]/30 uppercase font-inter text-xs cursor-pointer transition-all duration-300 
+                      className={`relative px-2 py-1.5 lg:px-4 lg:py-2 border-2 border-[#9196FF]/30 uppercase font-inter text-xs cursor-pointer transition-all duration-300 
                         ${selectedTopic === option? "bg-[#D0D2FF] font-black text-black shadow-[3px_3px_0_0_#fff] border-r-2 border-b-3 border-black -rotate-1": "font-bold bg-transparent"}`}
                       >
                         {option}
