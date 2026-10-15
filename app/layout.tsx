@@ -163,7 +163,7 @@ export const metadata: Metadata = {
   },
 };
 
-// Escaping "<" keeps the JSON safe inside a <script> tag
+
 const toJsonLd = (data: object) =>
   JSON.stringify(data).replace(/</g, "\\u003c");
 

@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 
-const DEFAULT_SITE_URL = "https://diprajray-com.vercel.app";
+const DEFAULT_SITE_URL = "http://www.diprajray.site/";
 
 function normalizeSiteUrl(url?: string) {
   if (!url) return DEFAULT_SITE_URL;
