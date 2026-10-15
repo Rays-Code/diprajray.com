@@ -15,7 +15,7 @@ const Hero = () => {
   return (
     <div className="min-h-screen">
 
-      <motion.div initial={{ opacity: 0, y:50 }} animate={{ opacity:1, y:0 }} transition={{ duration: 0.8, ease: "easeOut" }} className="relative flex flex-col justify-center items-center lg:pt-26 pt-0">
+      <motion.div initial={{ opacity: 0, y:50 }} animate={{ opacity:1, y:0 }} transition={{ duration: 0.8, ease: "easeOut" }} className="relative flex flex-col justify-center items-center lg:pt-16 pt-0">
         <AvailabilityBadge label={heroData.availability.label} country={heroData.availability.country.name} src={heroData.availability.country.src} alt={heroData.availability.country.alt}/>
 
         {/* Right side testimonial section */}
