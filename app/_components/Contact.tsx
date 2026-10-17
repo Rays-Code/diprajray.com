@@ -67,61 +67,71 @@ const Contact = () => {
     <div id="contact" className="flex flex-col items-center pt-28 lg:pt-44 px-2 lg:px-0">
 
       {/* TOP SECTION */}
-      <div className="flex flex-col justify-center items-center gap-6">
-        <div className="flex flex-col gap-5 items-center justify-center">
-          <div className="flex gap-2 font-hanken-grotesk text-[#9196FF] font-medium text-sm lg:text-base items-center">
-             <span className="w-6 lg:w-10 h-[2px] bg-[#9196FF]"></span>
-              <span>{contactData?.label}</span>
-             <span className="w-6 lg:w-10 h-[2px] bg-[#9196FF]"></span>
+      <div className="flex flex-col items-center gap-5 text-center lg:gap-6">
+        <div className="flex flex-col items-center gap-4 lg:gap-5">
+          <div className="flex items-center gap-3 font-hanken-grotesk text-xs font-medium uppercase tracking-wider text-[#9196FF] lg:gap-2 lg:text-base lg:normal-case lg:tracking-normal">
+            <span className="h-[2px] w-6 bg-[#9196FF] lg:w-10" />
+            <span>{contactData?.label}</span>
+            <span className="h-[2px] w-6 bg-[#9196FF] lg:w-10" />
           </div>
-          <div className="font-space-grotesk font-bold text-3xl lg:text-5xl">
+
+          <h2 className="font-space-grotesk text-[2rem] font-bold leading-[1.1] tracking-tight sm:text-4xl lg:text-5xl">
             <span className="text-[#C1C1C1]">{contactData?.heading?.highlighted}</span>
             <span> {contactData?.heading?.base}</span>
-          </div>
+          </h2>
         </div>
-        <div className="flex flex-col items-center justify-center max-w-[560px] text-center font-hanken-grotesk text-xs lg:text-lg font-normal">
-          <span>{contactData?.desc?.line1}</span>
-          <span>{contactData?.desc?.line2}</span>
-        </div>
+
+        <p className="max-w-[560px] text-pretty font-hanken-grotesk text-base font-normal leading-relaxed text-white/70 lg:text-lg lg:text-white">
+          {contactData?.desc?.line1}{" "}
+          <span className="lg:block">{contactData?.desc?.line2}</span>
+        </p>
       </div>
 
-
-      <div className="flex lg:flex-row flex-col justify-between gap-25 pt-14">
+      <div className="flex w-full flex-col justify-between gap-10 pt-12 lg:w-auto lg:flex-row lg:gap-25 lg:pt-14">
 
         {/* LEFT SECTION */}
-        <div className="relative flex flex-col pl-2 lg:pl-0">
-          <div className="text-[#9196FF] text-xs lg:text-lg font-medium font-hanken-grotesk">{contactData?.left?.label}</div>
-          <div className="font-space-grotesk text-3xl lg:text-6xl font-bold flex flex-col justify-center pt-2">
+        <div className="relative flex flex-col rounded-2xl border border-white/10 bg-white/[0.03] p-5 sm:p-6 lg:rounded-none lg:border-0 lg:bg-transparent lg:p-0">
+          <div className="font-hanken-grotesk text-xs font-medium uppercase tracking-wider text-[#9196FF] lg:text-lg lg:normal-case lg:tracking-normal">
+            {contactData?.left?.label}
+          </div>
+
+          <h3 className="flex flex-col pt-3 font-space-grotesk text-[1.75rem] font-bold leading-[1.1] tracking-tight sm:text-3xl lg:pt-2 lg:text-6xl">
             <span>{contactData?.left?.heading?.line1}</span>
-            <span>{contactData?.left?.heading?.line2?.base} <span className="bg-gradient-to-r from-[#969AFF] to-[#000CFF] bg-clip-text text-transparent">{contactData?.left?.heading?.line2?.highlighted}</span></span>
-          </div>
-          <div className="max-w-110 font-hanken-grotesk text-xs lg:text-lg font-regular text-gray-300 pt-6 lg:pt-10">
+            <span>
+              {contactData?.left?.heading?.line2?.base}{" "}
+              <span className="bg-gradient-to-r from-[#969AFF] to-[#000CFF] bg-clip-text text-transparent">
+                {contactData?.left?.heading?.line2?.highlighted}
+              </span>
+            </span>
+          </h3>
+
+          <p className="max-w-110 pt-4 font-hanken-grotesk text-base font-normal leading-relaxed text-gray-300 lg:pt-10 lg:text-lg">
             {contactData?.left?.desc}
-          </div>
-          <div className="flex items-center gap-3 pt-7">
+          </p>
+
+          {/* Email row: one tappable bar on mobile */}
+          <div className="mt-6 flex items-center gap-2 rounded-xl border border-white/10 bg-black/40 p-3 lg:mt-7 lg:rounded-none lg:border-0 lg:bg-transparent lg:p-0">
             <a
               href={`mailto:${contactData?.left?.email}`}
-              className="group flex items-center gap-4 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#9196FF]"
+              className="group flex min-w-0 flex-1 items-center gap-3 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#9196FF] lg:flex-none lg:gap-4"
             >
-              <div className="flex h-9 w-9 sm:h-10 sm:w-10 lg:h-11 lg:w-11 shrink-0 items-center justify-center rounded-md border border-[#9196FF]/60 text-[#9196FF] transition-all duration-200 group-hover:-translate-x-0.5 group-hover:-translate-y-0.5 group-hover:border-[#9196FF] group-hover:bg-[#9196FF] group-hover:text-black group-hover:shadow-[3px_3px_0_0_#fff]">
-                <Mail size={16} className="sm:hidden" strokeWidth={2.25} />
-                <Mail size={18} className="hidden sm:block lg:hidden" strokeWidth={2.25} />
-                <Mail size={20} className="hidden lg:block" strokeWidth={2.25} />
+              <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-md border border-[#9196FF]/60 text-[#9196FF] transition-all duration-200 group-hover:-translate-x-0.5 group-hover:-translate-y-0.5 group-hover:border-[#9196FF] group-hover:bg-[#9196FF] group-hover:text-black group-hover:shadow-[3px_3px_0_0_#fff] lg:h-11 lg:w-11">
+                <Mail size={18} strokeWidth={2.25} />
               </div>
 
               <div className="flex min-w-0 flex-col">
-                <span className="font-space-grotesk text-xs font-bold uppercase tracking-widest text-[#9196FF]">
+                <span className="font-space-grotesk text-[11px] font-bold uppercase tracking-widest text-[#9196FF] lg:text-xs">
                   Email
                 </span>
-                <span className="font-hanken-grotesk break-all text-sm lg:text-lg text-white decoration-[#9196FF] decoration-2 underline-offset-4 group-hover:underline">
+                <span className="truncate font-hanken-grotesk text-sm text-white decoration-[#9196FF] decoration-2 underline-offset-4 group-hover:underline lg:overflow-visible lg:whitespace-normal lg:break-all lg:text-lg">
                   {contactData?.left?.email}
                 </span>
               </div>
             </a>
 
             {/* Email copy */}
-            <div className="relative">
-              <div className="pointer-events-none absolute inset-x-0 bottom-full mb-2 flex justify-center">
+            <div className="relative shrink-0">
+              <div className="pointer-events-none absolute bottom-full right-0 mb-2">
                 <AnimatePresence>
                   {copied && (
                     <motion.div
@@ -133,7 +143,7 @@ const Contact = () => {
                       className="relative whitespace-nowrap rounded-md bg-[#9196FF] px-3 py-1.5 font-hanken-grotesk text-sm font-medium text-black"
                     >
                       Copied!
-                      <span className="absolute left-1/2 top-full -mt-1 h-2 w-2 -translate-x-1/2 rotate-45 bg-[#9196FF]" />
+                      <span className="absolute right-[15px] top-full -mt-1 h-2 w-2 rotate-45 bg-[#9196FF]" />
                     </motion.div>
                   )}
                 </AnimatePresence>
@@ -143,13 +153,12 @@ const Contact = () => {
                 type="button"
                 onClick={copyEmail}
                 aria-label="Copy email address"
-                className="cursor-pointer rounded-md bg-[#2A2A2E] p-1.5 opacity-80 transition-all duration-200 hover:scale-105 hover:opacity-100 focus-visible:outline-2 focus-visible:outline-[#9196FF]"
+                className="cursor-pointer rounded-md bg-[#2A2A2E] p-2.5 opacity-80 transition-all duration-200 hover:scale-105 hover:opacity-100 focus-visible:outline-2 focus-visible:outline-[#9196FF] lg:p-1.5"
               >
                 <Image src="/ui/copy.png" width={17} height={17} alt="" />
               </button>
             </div>
           </div>
-
         </div>
 
        {/* RIGHT SECTION */}

@@ -7,7 +7,7 @@ interface OutlinedCTA {
 }
 
 const OutlinedCTA = ({ label, action }: OutlinedCTA) => {
-    return <a href={action} className="flex gap-2 justify-center items-center text-sm lg:text-base border-1 border-gray-500 rounded-full pt-2 pb-1 px-4 lg:px-5 lg:px-8 font-istok-web font-semibold shadow-2xl cursor-pointer hover:scale-102 backdrop-blur-md hover:bg-gray-900 transition-all animate-300">
+    return <a href={action} className="flex gap-2 justify-center items-center text-base sm:text-sm lg:text-base border-1 border-gray-500 rounded-full pt-3 sm:pt-2 pb-2 sm:pb-1 px-4 lg:px-5 lg:px-8 font-istok-web font-semibold shadow-2xl cursor-pointer hover:scale-102 backdrop-blur-md hover:bg-gray-900 transition-all animate-300">
         <span>{label}</span>
         <span className="animate-bounce-arrow">
             <Image src="/ui/downward-arrow.svg" width={8} height={8} alt="downward arrow" />

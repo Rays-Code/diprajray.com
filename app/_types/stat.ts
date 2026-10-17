@@ -1,10 +1,9 @@
 
-interface stat {
-    heading: string,
-    src: string,
-    width: number,
-    height: number,
-    alt: string
+export interface Stat {
+  value: number;
+  suffix: string;
+  label: string;        
+  desktopLabel: string; 
 }
 
-export default stat;
+export default Stat;

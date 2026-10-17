@@ -22,19 +22,19 @@ const Hero = () => {
         <Testimonials />
 
         {/* Intro */}
-        <div className="flex flex-col gap-2 items-center py-5 font-semibold font-cormorant-upright text-2xl lg:text-5xl">
+        <div className="flex flex-col sm:gap-2 w-full sm:w-auto pl-5 sm:pl-0 items-start sm:items-center py-5 font-semibold font-cormorant-upright text-4xl lg:text-5xl">
           <div>{heroData.intro.greeting} <span className="text-2xl lg:text-4xl italic bg-white text-theme-blue rounded-full px-4 lg:px-6 pb-0.5 lg:pb-1">{heroData.intro.name}</span></div>
           <div>a <CareerCarousel /></div>
         </div>
 
         {/* Display text */}
-        <div className="relative flex flex-col items-center gap-1 font-space-grotesk text-3xl lg:text-6xl font-bold pt-4">
+        <div className="relative flex flex-col w-full sm:w-auto pl-5 sm:pl-0 items-start sm:items-center gap-1 font-space-grotesk text-5xl sm:text-4xl lg:text-6xl font-bold pt-2 sm:pt-4">
           <div>{heroData.headline.firstLine}</div>
           <div>{heroData.headline.secondLine} <div className="relative inline-block">
             {heroData.headline.highlightedWord}
 
             <svg
-              className="absolute -bottom-2 lg:-bottom-4 left-1/2 w-[110%] -translate-x-1/2 animate-underline"
+              className="absolute -bottom-3 lg:-bottom-4 left-1/2 w-[110%] -translate-x-1/2 animate-underline"
               viewBox="0 0 200 40"
               fill="none"
             >
@@ -51,17 +51,13 @@ const Hero = () => {
         </div>
 
         {/* Description Text */}
-        <div className="flex flex-col items-center pt-7 lg:pt-12 text-theme-gray text-xs lg:text-lg font-space-grotesk font-normal">
-          <div>
-            <span>{heroData.description.line1} </span>
-          </div>
-          <div>
-            <span>{heroData.description.line2}</span>
-          </div>
-        </div>
+        <p className="w-full max-w-md pl-5 pr-5 sm:pl-0 sm:pr-0 pt-7 lg:pt-12 text-left sm:text-center text-base sm:text-sm lg:text-lg leading-relaxed text-pretty text-theme-gray font-space-grotesk font-normal lg:max-w-none">
+          {heroData.description.line1}{" "}
+          <span className="lg:block">{heroData.description.line2}</span>
+        </p>
 
         {/* CTA Section */}
-       <div className="flex items-center justify-center gap-4 pt-10">
+       <div className="w-full sm:w-auto flex flex-col sm:flex-row justify-start lg:justify-center gap-4 pt-10 px-10 sm:px-0">
         <div>
           <ProjectButton label={heroData.cta.primary.label} action={heroData.cta.primary.action}/>
         </div>
@@ -87,7 +83,7 @@ const Hero = () => {
         </ul>
 
        {/* Horizontal divider - pt-14 */}
-       <div className="pt-16 lg:pt-10"> 
+       <div className="pt-12 lg:pt-10"> 
         <div className="h-[0.08px] w-[350px] lg:w-[700px] max-w-[90vw] bg-theme-gray opacity-20"></div>
        </div>
 

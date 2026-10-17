@@ -1,29 +1,55 @@
-import Image from "next/image";
+"use client";
+
+import { animate, useInView } from "motion/react";
+import { useEffect, useRef } from "react";
 import stats from "../_data/stats";
+
+const CountUp = ({ to }: { to: number }) => {
+  const ref = useRef<HTMLSpanElement>(null);
+  const inView = useInView(ref, { once: true });
+
+  useEffect(() => {
+    if (!inView) return;
+
+    const controls = animate(0, to, {
+      duration: 1.2,
+      ease: "easeOut",
+      onUpdate: (v) => {
+        if (ref.current) ref.current.textContent = Math.round(v).toString();
+      },
+    });
+
+    return () => controls.stop();
+  }, [inView, to]);
+
+  return <span ref={ref}>0</span>;
+};
 
 const Stats = () => {
   return (
-    <div>
-        <div className="w-full flex justify-center items-center gap-6 lg:gap-16 pt-5 lg:pt-7 text-[10px] lg:text-base font-inter text-gray-400 px-4">
+    <div className="mx-auto w-full max-w-[90vw] border-t border-white/10 pt-6 lg:max-w-[700px] lg:border-0 lg:pt-8">
+      <div className="grid grid-cols-3">
+        {stats.map((stat, idx) => (
+          <div
+            key={stat.label}
+            className={`flex flex-col items-center gap-2 px-2 text-center lg:gap-3 lg:px-6 ${
+              idx > 0 ? "border-l border-white/10" : ""
+            }`}
+          >
+            <div className="flex items-baseline justify-center font-space-grotesk text-3xl font-medium leading-none text-white lg:text-4xl">
+              <CountUp to={stat.value} />
+              <span className="text-theme-blue">{stat.suffix}</span>
+            </div>
 
-              {stats.map((stat, idx) => {
-                  return <div key={idx} className="flex justify-center items-center gap-8 lg:gap-16">
-                      <div className="flex flex-col items-center justify-center gap-1">
-                          <div>
-                              <Image src={stat.src} width={stat.width} height={stat.height} alt={stat.alt} className="opacity-80 lg:opacity-90"/>
-                          </div>
-                          <div className={`${stat.alt === "handshake icon"? "pt-1": "pt-0"} text-center`}>
-                              <span>{stat.heading}</span>
-                          </div>
-                      </div>
-
-                      {/* Horizontal line */}
-                      {idx === (stats.length - 1)? "": <div className="h-[40px] w-[0.4px] bg-theme-gray opacity-30"></div>}
-                  </div>
-              })}
-        </div>
+            <p className="font-inter text-xs leading-snug text-theme-gray lg:text-sm">
+              <span className="lg:hidden">{stat.label}</span>
+              <span className="hidden lg:inline">{stat.desktopLabel ?? stat.label}</span>
+            </p>
+          </div>
+        ))}
+      </div>
     </div>
-  )
-}
+  );
+};
 
-export default Stats
+export default Stats;

@@ -1,52 +1,66 @@
 import Image from "next/image";
-import Link from "next/link";
 import { siGithub } from "simple-icons";
 import workTogetherData from "../_data/workTogether";
 
 const GithubIcon = () => (
-    <svg
-        role="img"
-        viewBox="0 0 24 24"
-        width="16"
-        height="16"
-        fill="currentColor"
-    >
-        <path d={siGithub.path} />
-    </svg>
+  <svg role="img" viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true">
+    <path d={siGithub.path} />
+  </svg>
 );
 
 const WorkTogether = () => {
   return (
-    <div className="flex justify-center pt-36 lg:pt-48 pl-0 lg:pl-20">
-      <div className="flex flex-col lg:flex-row items-center lg:justify-between gap-8 items-center min-w-0 max-w-full px-6 lg:px-0 lg:min-w-0 lg:max-w-[1280px]">
-      <div className="flex flex-col gap-4">
-        <div className="text-[#9196FF] text-xs lg:text-sm font-medium font-hanken-grotesk flex gap-2 items-center">
-          <span className="w-6 lg:w-10 h-[2px] bg-[#9196FF]"></span>
-          <span>{workTogetherData.sectionLable}</span>
-        </div>
-        <div className="flex flex-col font-bold text-2xl lg:text-5xl text-white font-space-grotesk">
-          <div className="whitespace-normal sm:whitespace-nowrap">{workTogetherData.heading.line1}</div>
-          <div className="whitespace-normal sm:whitespace-nowrap">{workTogetherData.heading.line2.part1} <span className="bg-gradient-to-r bg-clip-text text-transparent from-[#969AFF] to-[#000CFF]">{workTogetherData.heading.line2.part2}</span></div>
-        </div>
-        <div className="max-w-110 font-hanken-grotesk text-sm lg:text-lg text-white font-regular">{workTogetherData.description}</div>
-        <div className="flex gap-4 pt-8">
-          <a href={workTogetherData.CTA.contact.href} className="flex gap-2 justify-center items-center text-xs lg:text-base bg-theme-blue rounded-full pt-1.5 lg:pt-2 pb-1 px-4 lg:px-6 font-hanken-grotesk font-semibold shadow-2xl cursor-pointer hover:scale-102 backdrop-blur-md transition-all duration-300">
-            <span>{workTogetherData.CTA.contact.name}</span>
-            <span>
-              <Image src="/ui/right-arrow.png" width={14} height={10} alt="up right arrow" />
+    <section className="flex justify-center px-5 pt-24 pb-16 sm:px-8 lg:pb-0 lg:pl-20 lg:pt-48">
+      <div className="flex w-full max-w-[1280px] flex-col gap-12 lg:flex-row lg:items-center lg:justify-between lg:gap-8">
+
+        <div className="flex flex-col gap-5">
+          <div className="flex items-center gap-3 font-hanken-grotesk text-xs font-medium uppercase tracking-wider text-[#9196FF] lg:gap-2 lg:text-sm">
+            <span className="h-[2px] w-8 bg-[#9196FF] lg:w-10" />
+            <span>{workTogetherData.sectionLable}</span>
+          </div>
+
+          {/* Heading */}
+          <h2 className="flex flex-col font-space-grotesk text-[2rem] font-bold leading-[1.1] tracking-tight text-white sm:text-4xl lg:text-5xl">
+            <span className="sm:whitespace-nowrap">{workTogetherData.heading.line1}</span>
+            <span className="sm:whitespace-nowrap">
+              {workTogetherData.heading.line2.part1}{" "}
+              <span className="bg-gradient-to-r from-[#969AFF] to-[#000CFF] bg-clip-text text-transparent">
+                {workTogetherData.heading.line2.part2}
+              </span>
             </span>
-          </a>
-          <a target="_blank" href={workTogetherData.CTA.github.href} className="flex gap-2 justify-center items-center text-xs lg:text-sm border-1 border-gray-400 rounded-full pt-2 pb-1  px-3 lg:px-5 font-istok-web font-semibold shadow-2xl cursor-pointer hover:scale-102 backdrop-blur-md hover:bg-gray-900 transition-all duration-300">
-            <span>
+          </h2>
+
+          {/* Description */}
+          <p className="max-w-md font-hanken-grotesk text-base font-normal leading-relaxed text-white/70 text-pretty lg:max-w-110 lg:text-lg lg:text-white">
+            {workTogetherData.description}
+          </p>
+
+          {/* CTAs */}
+          <div className="flex w-full flex-col gap-3 pt-3 sm:w-auto sm:flex-row sm:gap-4 lg:pt-8">
+            <a
+              href={workTogetherData.CTA.contact.href}
+              className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-theme-blue px-6 pt-0.5 font-hanken-grotesk text-base font-semibold shadow-2xl backdrop-blur-md transition-all duration-300 hover:scale-102 sm:w-auto lg:h-auto lg:pb-1 lg:pt-2"
+            >
+              <span>{workTogetherData.CTA.contact.name}</span>
+              <Image src="/ui/right-arrow.png" width={14} height={10} alt="" />
+            </a>
+
+            <a
+              target="_blank"
+              rel="noopener noreferrer"
+              href={workTogetherData.CTA.github.href}
+              className="flex h-12 w-full items-center justify-center gap-2 rounded-full border border-gray-500 px-6 pt-0.5 font-istok-web text-base font-semibold shadow-2xl backdrop-blur-md transition-all duration-300 hover:scale-102 hover:bg-gray-900 sm:w-auto lg:h-auto lg:pb-1 lg:pt-2 lg:text-sm"
+            >
               <GithubIcon />
-            </span>
-            <span>{workTogetherData.CTA.github.name}</span>
-          </a>
+              <span>{workTogetherData.CTA.github.name}</span>
+            </a>
+          </div>
         </div>
-      </div>
-        <div>
+
+        {/* Illustration */}
+        <div className="flex justify-center lg:block">
           <Image
-            className="lg:pt-0 pt-4 w-full max-w-[380px] xl:max-w-[520px] object-contain"
+            className="w-full max-w-[300px] object-contain sm:max-w-[380px] xl:max-w-[520px]"
             src={workTogetherData.illustration.src}
             width={600}
             height={600}
@@ -54,8 +68,8 @@ const WorkTogether = () => {
           />
         </div>
       </div>
-    </div>
-  )
-}
+    </section>
+  );
+};
 
 export default WorkTogether;

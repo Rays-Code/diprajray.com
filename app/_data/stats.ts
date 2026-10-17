@@ -1,27 +1,36 @@
-import stat from "../_types/stat"
+import Stat from "../_types/stat"
 
-const stats: stat[] = [
-    {
-        heading: "20+ Projects Delivered",
-        src: "/ui/suitcase.png",
-        width: 35,
-        height: 35, 
-        alt: "projects icon"
-    },
-    {
-        heading: "10+ Clients & Collaborations",
-        src: "/ui/handshake.png",
-        width: 28,
-        height: 28, 
-        alt: "handshake icon"
-    },
-    {
-        heading: "2+ Years Building for the Web",
-        src: "/ui/verified.png",
-        width: 30,
-        height: 30, 
-        alt: "verified icon"
-    }
-]
+const stats: Stat[] = [
+  {
+    value: 20,
+    suffix: "+",
+    label: "Projects delivered",
+    shortLabel: "Projects",
+    src: "/ui/briefcase.svg",
+    width: 20,
+    height: 20,
+    alt: "briefcase icon",
+  },
+  {
+    value: 10,
+    suffix: "+",
+    label: "Clients and collaborations",
+    shortLabel: "Clients",
+    src: "/ui/handshake.svg",
+    width: 24,
+    height: 20,
+    alt: "handshake icon",
+  },
+  {
+    value: 2,
+    suffix: "+",
+    label: "Years building for the web",
+    shortLabel: "Years",
+    src: "/ui/verified.svg",
+    width: 20,
+    height: 20,
+    alt: "verified badge icon",
+  },
+];
 
 export default stats;
