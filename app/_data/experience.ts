@@ -17,16 +17,15 @@ const expData = {
                 },
                 name: "VEHICULR",
                 designation: {
-                    text: "FullStack Engineer",
+                    text: "FullStack Intern",
                     colour: "text-blue-400"
                 },
                 current: true,
                 location: "Bangalore, India • Remote ",
                 duration: "Jan 2026 - Present",
-                description: ["Developed and maintained a vehicle listing platform serving vehicle owners and businesses across India, building search, filter, and listing management features end to end.", 
-                              "Built a full-featured admin panel with role-based access control, enabling internal teams to manage listings, users, and service workflows across the platform with zero manual overhead.",
-                              "Designed and integrated REST APIs for automotive services and booking flows, connecting backend business logic to responsive React.js frontends optimized for mobile-first users across India.",
-                              "Built and optimized performance-critical dashboards for operational visibility, reducing data retrieval latency through query optimization and efficient state rendering on the frontend."
+                description: ["Built a vehicle listing platform serving owners and businesses across India, featuring search, filters, and service booking flows.", 
+                              "Developed an admin panel with RBAC across 4 user roles for managing listings, users, and service workflows.",
+                              "Designed 25+ REST APIs with MongoDB and mobile-first React.js frontends; query optimization made dashboards load 70% faster.",
             ],
             type: "work"
             },
@@ -43,10 +42,9 @@ const expData = {
                 current: false,
                 location: "Kolkata, India • Remote ",
                 duration: "Feb 2026 - Aug 2026",
-                description: [" Architected and shipped end-to-end scalable full stack applications — from database schema and backend API design to responsive frontend delivery — for multiple client-facing digital products.", 
-                              "Built modular, data-driven dashboards with real-time state management using React.js and Next.js, reducing client reporting time by consolidating 5+ data sources into unified interfaces.",
-                              "Designed and maintained RESTful APIs and backend services using Node.js, implementing input validation, error handling, and scalable routing patterns across 3+ production platforms.",
-                              "Translated Figma designs into pixel-accurate, responsive components using React and Tailwind CSS, maintaining design-to-code fidelity across web and mobile breakpoints for all brand clients."
+                description: ["Built and shipped 6 client products (web apps, a mobile app, brand websites) end to end, from database schema and REST APIs to AWS deployment.", 
+                              "Integrated 2 payment gateways (Razorpay, Stripe), 2 AI providers (OpenAI, Gemini), and secure video sessions across Next.js, React, and React Native apps.",
+                              "Converted Figma designs into responsive Next.js and Tailwind CSS interfaces; designed PostgreSQL schemas with Prisma and Supabase backends for web and mobile apps.",
             ],
             type: "work"
             },
@@ -63,10 +61,9 @@ const expData = {
                 current: false,
                 location: "Texas, US • Remote ",
                 duration: "May 2025 - Jul 2025",
-                description: ["Developed and deployed RESTful APIs using Node.js, integrating SQL and NoSQL databases with optimized queries that reduced average data retrieval time by 25%.", 
-                              "Delivered pixel-perfect, responsive UI components using React and Tailwind CSS, achieving design parity across 3 major product pages.",
-                              "Built secure image storage and restoration pipelines using Multer and AWS S3, handling 100% of user-generated content uploads with zero data loss incidents.",
-                              "Implemented authentication and authorization flows across all application endpoints, coordinating with a 4-person engineering team via Git throughout a 3-month sprint."
+                description: ["Built student registration, parent dashboard, and admin views for Raising Right, a pre-school student management portal, using React, Node.js, Express.js, and MongoDB.", 
+                              "Developed a multi-step form with partial student entry and a parent-side flow to complete details; created a responsive React and Tailwind CSS UI for 3 product pages.",
+                              "Developed secure REST APIs on MongoDB with JWT auth and S3 media uploads, cutting data retrieval time by 25% through query optimization.",
             ],
             type: "work"
             }
@@ -81,7 +78,7 @@ const expData = {
                     src: "/companies/BITS_Pilani_Logo.svg"
                 },
                 name: "Birla Institue of Technology and Science, Pilani",
-                degree: "BS Computer Science",
+                degree: "BSc. Computer Science",
                 location: "Hyderabad, India",
                 duration: "Aug 2024 - Jul 2027",
                 classes: ["Data Structures & Algorithms", "Operating Systems", "Computer Networks", "Database Management Systems", "Object-Oriented Programming"],

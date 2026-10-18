@@ -13,7 +13,7 @@ const Footer = () => {
         <div className="flex flex-col lg:flex-row justify-center lg:justify-between min-w-auto gap-10 lg:gap-0 lg:min-w-175 pt-14 lg:pt-0 px-7 lg:px-0">
           <div>
             <div className="text-sm font-semibold">{footerData?.navigate?.heading}</div>
-            <div className="grid grid-cols-5 gap-4 pt-4 text-gray-400">
+            <div className="flex flex-wrap gap-x-6 gap-y-2 pt-4 text-gray-400">
               {footerData?.navigate?.options?.map((nav, idx) => {
                 return <a key={idx} href={nav.href} onClick={(e) => {
                   if (nav.name === "Resume") {

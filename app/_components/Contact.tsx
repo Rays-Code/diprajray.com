@@ -109,7 +109,7 @@ const Contact = () => {
             {contactData?.left?.desc}
           </p>
 
-          {/* Email row: one tappable bar on mobile */}
+          {/* Email row: tappable bar on mobile */}
           <div className="mt-6 flex items-center gap-2 rounded-xl border border-white/10 bg-black/40 p-3 lg:mt-7 lg:rounded-none lg:border-0 lg:bg-transparent lg:p-0">
             <a
               href={`mailto:${contactData?.left?.email}`}
@@ -162,7 +162,7 @@ const Contact = () => {
         </div>
 
        {/* RIGHT SECTION */}
-       <div className="border border-[#9196FF]/50 w-full max-w-90 sm:max-w-130 h-auto lg:h-178 shadow-xl p-8">
+       <div className="mx-auto border border-[#9196FF]/50 w-full max-w-90 sm:max-w-130 h-auto lg:mx-0 lg:h-178 shadow-xl p-8">
 
         <div className="flex flex-col gap-2">
           <div className="flex items-center gap-2">
@@ -184,7 +184,7 @@ const Contact = () => {
         <div className="flex justify-center items-center pt-8">
 
           {/* Form section */}
-            <form ref={form} onSubmit={sendEmail} noValidate className="grid grid-cols-2 gap-6">
+            <form ref={form} onSubmit={sendEmail} noValidate className="grid w-full grid-cols-2 gap-6">
 
                {/* Contact Options */}
                <div className="col-span-2 flex flex-col gap-6">

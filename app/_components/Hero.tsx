@@ -29,7 +29,7 @@ const Hero = () => {
 
         {/* Display text */}
         <div className="relative flex flex-col w-full sm:w-auto pl-5 sm:pl-0 items-start sm:items-center gap-1 font-space-grotesk text-5xl sm:text-4xl lg:text-6xl font-bold pt-2 sm:pt-4">
-          <div>{heroData.headline.firstLine}</div>
+          <div className="text-3xl sm:text-4xl lg:text-6xl">{heroData.headline.firstLine}</div>
           <div>{heroData.headline.secondLine} <div className="relative inline-block">
             {heroData.headline.highlightedWord}
 
@@ -82,9 +82,9 @@ const Hero = () => {
           ))}
         </ul>
 
-       {/* Horizontal divider - pt-14 */}
+       {/* Horizontal divider */}
        <div className="pt-12 lg:pt-10"> 
-        <div className="h-[0.08px] w-[350px] lg:w-[700px] max-w-[90vw] bg-theme-gray opacity-20"></div>
+        <div className="hidden h-[0.08px] w-[700px] max-w-[90vw] bg-theme-gray opacity-20 lg:block"></div>
        </div>
 
       {/* Stats Section */}

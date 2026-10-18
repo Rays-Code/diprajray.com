@@ -13,8 +13,9 @@ const WorkTogether = () => {
     <section className="flex justify-center px-5 pt-24 pb-16 sm:px-8 lg:pb-0 lg:pl-20 lg:pt-48">
       <div className="flex w-full max-w-[1280px] flex-col gap-12 lg:flex-row lg:items-center lg:justify-between lg:gap-8">
 
-        <div className="flex flex-col gap-5">
-          <div className="flex items-center gap-3 font-hanken-grotesk text-xs font-medium uppercase tracking-wider text-[#9196FF] lg:gap-2 lg:text-sm">
+        {/* Text column: centered below lg, left-aligned from lg up */}
+        <div className="flex flex-col items-center gap-5 text-center lg:items-start lg:text-left">
+          <div className="flex items-center justify-center gap-3 font-hanken-grotesk text-xs font-medium uppercase tracking-wider text-[#9196FF] lg:justify-start lg:gap-2 lg:text-sm">
             <span className="h-[2px] w-8 bg-[#9196FF] lg:w-10" />
             <span>{workTogetherData.sectionLable}</span>
           </div>
@@ -31,12 +32,12 @@ const WorkTogether = () => {
           </h2>
 
           {/* Description */}
-          <p className="max-w-md font-hanken-grotesk text-base font-normal leading-relaxed text-white/70 text-pretty lg:max-w-110 lg:text-lg lg:text-white">
+          <p className="mx-auto max-w-md font-hanken-grotesk text-base font-normal leading-relaxed text-white/70 text-pretty lg:mx-0 lg:max-w-110 lg:text-lg lg:text-white">
             {workTogetherData.description}
           </p>
 
           {/* CTAs */}
-          <div className="flex w-full flex-col gap-3 pt-3 sm:w-auto sm:flex-row sm:gap-4 lg:pt-8">
+          <div className="flex w-full flex-col gap-3 pt-3 sm:w-auto sm:flex-row sm:justify-center sm:gap-4 lg:justify-start lg:pt-8">
             <a
               href={workTogetherData.CTA.contact.href}
               className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-theme-blue px-6 pt-0.5 font-hanken-grotesk text-base font-semibold shadow-2xl backdrop-blur-md transition-all duration-300 hover:scale-102 sm:w-auto lg:h-auto lg:pb-1 lg:pt-2"
