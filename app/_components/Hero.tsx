@@ -28,13 +28,13 @@ const Hero = () => {
         </div>
 
         {/* Display text */}
-        <div className="relative flex flex-col w-full sm:w-auto pl-5 sm:pl-0 items-start sm:items-center gap-1 font-space-grotesk text-5xl sm:text-4xl lg:text-6xl font-bold pt-2 sm:pt-4">
-          <div className="text-3xl sm:text-4xl lg:text-6xl">{heroData.headline.firstLine}</div>
+        <div className="relative flex flex-col w-full sm:w-auto pl-5 pr-5 sm:px-0 items-start sm:items-center gap-2.5 lg:gap-3 font-space-grotesk text-5xl sm:text-4xl lg:text-6xl font-bold pt-2 sm:pt-4">
+          <div className="text-[1.65rem] min-[380px]:text-3xl sm:text-4xl lg:text-6xl">{heroData.headline.firstLine}</div>
           <div>{heroData.headline.secondLine} <div className="relative inline-block">
             {heroData.headline.highlightedWord}
 
             <svg
-              className="absolute -bottom-3 lg:-bottom-4 left-1/2 w-[110%] -translate-x-1/2 animate-underline"
+              className="absolute -bottom-4 lg:-bottom-5 left-1/2 w-[110%] -translate-x-1/2 animate-underline"
               viewBox="0 0 200 40"
               fill="none"
             >
