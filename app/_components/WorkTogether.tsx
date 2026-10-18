@@ -13,7 +13,7 @@ const WorkTogether = () => {
     <section className="flex justify-center px-5 pt-24 pb-16 sm:px-8 lg:pb-0 lg:pl-20 lg:pt-48">
       <div className="flex w-full max-w-[1280px] flex-col gap-12 lg:flex-row lg:items-center lg:justify-between lg:gap-8">
 
-        {/* Text column: centered below lg, left-aligned from lg up */}
+        {/* Section label */}
         <div className="flex flex-col items-center gap-5 text-center lg:items-start lg:text-left">
           <div className="flex items-center justify-center gap-3 font-hanken-grotesk text-xs font-medium uppercase tracking-wider text-[#9196FF] lg:justify-start lg:gap-2 lg:text-sm">
             <span className="h-[2px] w-8 bg-[#9196FF] lg:w-10" />
@@ -21,9 +21,9 @@ const WorkTogether = () => {
           </div>
 
           {/* Heading */}
-          <h2 className="flex flex-col font-space-grotesk text-[2rem] font-bold leading-[1.1] tracking-tight text-white sm:text-4xl lg:text-5xl">
-            <span className="sm:whitespace-nowrap">{workTogetherData.heading.line1}</span>
-            <span className="sm:whitespace-nowrap">
+          <h2 className="flex flex-col font-space-grotesk text-[clamp(1.2rem,6vw,2rem)] font-bold leading-[1.1] tracking-tight text-white sm:text-4xl lg:text-5xl">
+            <span className="whitespace-nowrap">{workTogetherData.heading.line1}</span>
+            <span className="whitespace-nowrap">
               {workTogetherData.heading.line2.part1}{" "}
               <span className="bg-gradient-to-r from-[#969AFF] to-[#000CFF] bg-clip-text text-transparent">
                 {workTogetherData.heading.line2.part2}
@@ -32,7 +32,7 @@ const WorkTogether = () => {
           </h2>
 
           {/* Description */}
-          <p className="mx-auto max-w-md font-hanken-grotesk text-base font-normal leading-relaxed text-white/70 text-pretty lg:mx-0 lg:max-w-110 lg:text-lg lg:text-white">
+          <p className="mx-auto max-w-md font-hanken-grotesk text-[0.9rem] font-normal leading-relaxed text-white/70 text-pretty sm:text-base lg:mx-0 lg:max-w-110 lg:text-lg lg:text-white">
             {workTogetherData.description}
           </p>
 
