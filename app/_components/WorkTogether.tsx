@@ -21,7 +21,7 @@ const WorkTogether = () => {
           </div>
 
           {/* Heading */}
-          <h2 className="flex flex-col font-space-grotesk text-[clamp(1.2rem,6vw,2rem)] font-bold leading-[1.1] tracking-tight text-white sm:text-4xl lg:text-5xl">
+          <h2 className="flex flex-col font-space-grotesk text-[clamp(1.25rem,7vw,2rem)] font-bold leading-[1.1] tracking-tight text-white sm:text-4xl lg:text-5xl">
             <span className="whitespace-nowrap">{workTogetherData.heading.line1}</span>
             <span className="whitespace-nowrap">
               {workTogetherData.heading.line2.part1}{" "}
