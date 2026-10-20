@@ -77,7 +77,7 @@ const expData = {
                     name: "BITS Pilani Logo",
                     src: "/companies/BITS_Pilani_Logo.svg"
                 },
-                name: "Birla Institue of Technology and Science, Pilani",
+                name: "Birla Institute of Technology and Science, Pilani",
                 degree: "BSc. Computer Science",
                 location: "Hyderabad, India",
                 duration: "Aug 2024 - Jul 2027",
