@@ -13,6 +13,7 @@ import {
   JetBrains_Mono,
   Google_Sans_Code,
 } from "next/font/google";
+import Script from "next/script";
 import localFont from "next/font/local";
 import "./globals.css";
 import Navbar from "./_components/Navbar";
@@ -167,6 +168,8 @@ export const metadata: Metadata = {
 const toJsonLd = (data: object) =>
   JSON.stringify(data).replace(/</g, "\\u003c");
 
+const GA_ID = "G-9QEQ5XFR0J";
+
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
@@ -189,6 +192,20 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         antialiased
         `}
     >
+      <head>
+        <Script
+          src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`}
+          strategy="afterInteractive"
+        />
+        <Script id="google-tag" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', '${GA_ID}');
+          `}
+        </Script>
+      </head>
       <body className="min-h-full flex flex-col">
         <script
           type="application/ld+json"
