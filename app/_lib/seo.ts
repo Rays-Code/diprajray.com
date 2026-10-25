@@ -25,7 +25,7 @@ export const siteConfig = {
     "Portfolio of Dipraj Ray, a full stack developer from India building fast, scalable web applications and SaaS products with React, Next.js, Node.js, TypeScript, PostgreSQL and AWS.",
   siteUrl,
   locale: "en_IN",
-  image: "/diprajray.png", // 1200x630
+  image: "/diprajray.jpg",
   logo: "/_lib/favicon.ico",
   linkedIn: "https://www.linkedin.com/in/dipraj-ray/",
   github: "https://github.com/Rays-Code",
